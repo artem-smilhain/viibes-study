@@ -72,7 +72,7 @@
                         <link itemprop="availability" href="https://schema.org/InStock">
                     </div>
                     <div class="viibes__services_packages_item_sale">
-                        <p>Скидка действует до <u>31.10.2023</u>️️</p>
+                        <p>Скидка действует до <u>31.12.2024</u>️️</p>
                     </div>
                     <div class="viibes__services_packages_item_topside">
                         <div class="viibes__services_packages_item_topside_title">
@@ -83,7 +83,7 @@
                             <div class="right">
                                 <div>
                                     <h4 class="viibes__h3 viibes__color_purple"><span>€</span>{{ env('STANDARD_PRICE') }}</h4>
-                                    <h5 class="viibes__h4 viibes__color_purple"><span>€</span>1890</h5>
+                                    <h5 class="viibes__h4 viibes__color_purple"><span>€</span>2490</h5>
                                 </div>
                             </div>
                         </div>
@@ -93,7 +93,7 @@
                                     <path d="M16 4C9.3724 4 4 9.3724 4 16C4 22.6276 9.3724 28 16 28C22.6276 28 28 22.6276 28 16C28 9.3724 22.6276 4 16 4ZM13.6 22.4968L7.9516 16.8484L9.6484 15.1516L13.6 19.1032L22.3516 10.3516L24.0484 12.0484L13.6 22.4968Z" fill="#A264F1"/>
                                 </svg>
                                 <p class="viibes__text_medium ">
-                                    Подаем документы на 2 специальности
+                                    Помогаем в выборе университета и специальности
                                 </p>
                             </div>
                             <div class="viibes__services_packages_item_list_item">
@@ -101,7 +101,7 @@
                                     <path d="M16 4C9.3724 4 4 9.3724 4 16C4 22.6276 9.3724 28 16 28C22.6276 28 28 22.6276 28 16C28 9.3724 22.6276 4 16 4ZM13.6 22.4968L7.9516 16.8484L9.6484 15.1516L13.6 19.1032L22.3516 10.3516L24.0484 12.0484L13.6 22.4968Z" fill="#A264F1"/>
                                 </svg>
                                 <p class="viibes__text_medium ">
-                                    Делаем судебные переводы документов
+                                    Подаем документы на 2 специальности (могут быть разные факультеты или ВУЗы)
                                 </p>
                             </div>
                             <div class="viibes__services_packages_item_list_item">
@@ -109,7 +109,7 @@
                                     <path d="M16 4C9.3724 4 4 9.3724 4 16C4 22.6276 9.3724 28 16 28C22.6276 28 28 22.6276 28 16C28 9.3724 22.6276 4 16 4ZM13.6 22.4968L7.9516 16.8484L9.6484 15.1516L13.6 19.1032L22.3516 10.3516L24.0484 12.0484L13.6 22.4968Z" fill="#A264F1"/>
                                 </svg>
                                 <p class="viibes__text_medium ">
-                                    Апостилируем аттестат/диплом
+                                    Подготовка и оформление документов с нотариальным заверением в Словакии
                                 </p>
                             </div>
                             <div class="viibes__services_packages_item_list_item">
@@ -117,7 +117,7 @@
                                     <path d="M16 4C9.3724 4 4 9.3724 4 16C4 22.6276 9.3724 28 16 28C22.6276 28 28 22.6276 28 16C28 9.3724 22.6276 4 16 4ZM13.6 22.4968L7.9516 16.8484L9.6484 15.1516L13.6 19.1032L22.3516 10.3516L24.0484 12.0484L13.6 22.4968Z" fill="#A264F1"/>
                                 </svg>
                                 <p class="viibes__text_medium ">
-                                    Нотариально заверяем все документы в словацком нотариусе
+                                    Делаем нострификацию документов об среднем образовании
                                 </p>
                             </div>
                             <div class="viibes__services_packages_item_list_item">
@@ -125,7 +125,7 @@
                                     <path d="M16 4C9.3724 4 4 9.3724 4 16C4 22.6276 9.3724 28 16 28C22.6276 28 28 22.6276 28 16C28 9.3724 22.6276 4 16 4ZM13.6 22.4968L7.9516 16.8484L9.6484 15.1516L13.6 19.1032L22.3516 10.3516L24.0484 12.0484L13.6 22.4968Z" fill="#A264F1"/>
                                 </svg>
                                 <p class="viibes__text_medium ">
-                                    Подготавливаем пакет документов на получение визы и записываем в консульство
+                                    Коммуникация с университетом и контроль сроков подачи
                                 </p>
                             </div>
                             <div class="viibes__services_packages_item_list_item">
@@ -133,7 +133,7 @@
                                     <path d="M16 4C9.3724 4 4 9.3724 4 16C4 22.6276 9.3724 28 16 28C22.6276 28 28 22.6276 28 16C28 9.3724 22.6276 4 16 4ZM13.6 22.4968L7.9516 16.8484L9.6484 15.1516L13.6 19.1032L22.3516 10.3516L24.0484 12.0484L13.6 22.4968Z" fill="#A264F1"/>
                                 </svg>
                                 <p class="viibes__text_medium ">
-                                    Подаем заявление на место в общежитии
+                                    Подготавливаем пакет документов на получение визы и записываем в посольство
                                 </p>
                             </div>
                             <div class="viibes__services_packages_item_list_item">
@@ -141,15 +141,7 @@
                                     <path d="M16 4C9.3724 4 4 9.3724 4 16C4 22.6276 9.3724 28 16 28C22.6276 28 28 22.6276 28 16C28 9.3724 22.6276 4 16 4ZM13.6 22.4968L7.9516 16.8484L9.6484 15.1516L13.6 19.1032L22.3516 10.3516L24.0484 12.0484L13.6 22.4968Z" fill="#A264F1"/>
                                 </svg>
                                 <p class="viibes__text_medium ">
-                                    Делаем нострификацию документов
-                                </p>
-                            </div>
-                            <div class="viibes__services_packages_item_list_item">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                                    <path d="M16 4C9.3724 4 4 9.3724 4 16C4 22.6276 9.3724 28 16 28C22.6276 28 28 22.6276 28 16C28 9.3724 22.6276 4 16 4ZM13.6 22.4968L7.9516 16.8484L9.6484 15.1516L13.6 19.1032L22.3516 10.3516L24.0484 12.0484L13.6 22.4968Z" fill="#A264F1"/>
-                                </svg>
-                                <p class="viibes__text_medium ">
-                                    Сопровождаем при поселении в общежитие, на запись в университет и обязательный медосмотр.
+                                    Сопровождаем при заселении в общежитие, на запись в университет и обязательный медосмотр
                                 </p>
                             </div>
                             <div class="viibes__services_packages_item_list_item">
@@ -165,7 +157,7 @@
                                     <path d="M16 4C9.3724 4 4 9.3724 4 16C4 22.6276 9.3724 28 16 28C22.6276 28 28 22.6276 28 16C28 9.3724 22.6276 4 16 4ZM13.6 22.4968L7.9516 16.8484L9.6484 15.1516L13.6 19.1032L22.3516 10.3516L24.0484 12.0484L13.6 22.4968Z" fill="#A264F1"/>
                                 </svg>
                                 <p class="viibes__text_medium ">
-                                    Оформляем и подаем пакет документов на оформление ВНЖ Словакии. Сопровождаем в полиции
+                                    Оформляем и подаем пакет документов на оформление ВНЖ Словакии, сопровождаем в полиции
                                 </p>
                             </div>
                             <div class="viibes__services_packages_item_list_item">
@@ -173,7 +165,7 @@
                                     <path d="M16 4C9.3724 4 4 9.3724 4 16C4 22.6276 9.3724 28 16 28C22.6276 28 28 22.6276 28 16C28 9.3724 22.6276 4 16 4ZM13.6 22.4968L7.9516 16.8484L9.6484 15.1516L13.6 19.1032L22.3516 10.3516L24.0484 12.0484L13.6 22.4968Z" fill="#A264F1"/>
                                 </svg>
                                 <p class="viibes__text_medium ">
-                                    Помощь и поддержка по любым вопросам на весь период поступления.
+                                    Помощь и поддержка по любым вопросам на весь период поступления
                                 </p>
                             </div>
                             <div class="viibes__services_packages_item_list_item">
@@ -195,7 +187,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="viibes__services_packages_item viibes__bg_purple_cta" id="viibes__services_package_standart" itemscope itemtype="http://schema.org/Product">
+                <div class="viibes__services_packages_item viibes__bg_purple_cta" id="viibes__services_package_standart" itemscope itemtype="http://schema.org/Product" style="display: none;">
                     <meta itemprop="sku" content="standart">
                     <meta itemprop="brand" content="VIIBES Study">
                     <meta itemprop="url" content="@if($ip) {{ URL::asset('/assets/client/pdf/prices/desktop/standard_ukraine.pdf') }} @else {{ URL::asset('/assets/client/pdf/prices/desktop/standard.pdf') }} @endif">
@@ -207,7 +199,7 @@
                         <link itemprop="availability" href="https://schema.org/InStock">
                     </div>
                     <div class="viibes__services_packages_item_sale viibes__bg_purple viibes__color_purple">
-                        <p>Скидка действует до <u>31.10.2023</u>️️</p>
+                        <p>Скидка действует до <u>31.10.2024</u>️️</p>
                     </div>
                     <div class="viibes__services_packages_item_topside">
                         <div class="viibes__services_packages_item_topside_title">

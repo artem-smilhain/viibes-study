@@ -7,7 +7,7 @@
             <p>
                 Набор группы
                 <span> абитуриентов {{ (new \App\Http\Controllers\Controller())->get_banner_substring($ip_country) }}</span>
-                на 2024 <br> год уже идет!
+                <u>на 2025 <br> год</u> уже идет!
             </p>
             <a href="#" class=" viibes__modal_form_activator">
                 Связаться с нами

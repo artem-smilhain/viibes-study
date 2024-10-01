@@ -87,7 +87,7 @@
 @section('content')
     @include('client.blocks.seo.text')
     <section class="viibes__home_preview">
-        <video src="{{ URL::asset('/assets/client/video/home.mp4') }}" style="filter: brightness(0.5);" muted="" autoplay="" loop="" playsinline class="viibes__home_preview_video"></video>
+        <video src="{{ URL::asset('/assets/client/video/home.mp4') }}" muted="" style="height: calc(100% + 4rem); min-height: inherit;" autoplay="" loop="" playsinline class="viibes__home_preview_video"></video> <!-- style="filter: brightness(0.5);" -->
         <div class="viibes__home_preview_content">
             <div class="viibes__wrap">
                 <h2 class="viibes__h1 viibes__color_white">

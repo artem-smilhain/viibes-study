@@ -27,7 +27,7 @@ class ServiceController extends Controller
 
     public function standard(Request $request){
         $name = 'STANDARD';
-        $price = '1890';
+        $price = '2200';
         $breadcrumbs = [
             'Услуги и стоимость' => route('services'),
             'Тариф услуг «'.$name.'»' => route('services.standard')

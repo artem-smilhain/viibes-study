@@ -118,11 +118,11 @@
                     <p class="viibes__text_normal">протяжение курса</p>
                 </div>
                 <div class="viibes__course_group_info_item">
-                    <h3>60 <span>занятий</span></h3>
+                    <h3>70 <span>занятий</span></h3>
                     <p class="viibes__text_normal">входит в курс</p>
                 </div>
                 <div class="viibes__course_group_info_item">
-                    <h3>3 <span>урока</span></h3>
+                    <h3>3-4 <span>урока</span></h3>
                     <p class="viibes__text_normal">в неделю</p>
                 </div>
                 <div class="viibes__course_group_info_item">
@@ -130,7 +130,7 @@
                     <p class="viibes__text_normal">охватывает курс</p>
                 </div>
                 <div class="viibes__course_group_info_item">
-                    <h3>5 <span>человек</span></h3>
+                    <h3>6 <span>человек</span></h3>
                     <p class="viibes__text_normal">в каждой группе</p>
                 </div>
                 <div class="viibes__course_group_info_item">
@@ -232,7 +232,7 @@
                     <div class="viibes__course_cta_main_underside_action">
                         <a class="viibes__btn_medium" id="viibes__modal_courses_activator">Записаться на курс</a>
                         <h5 class="viibes__h5 viibes__color_gray">Набор групп на курсы уже стартовал! <br>
-                            Первая стартует <span class="viibes__h5 viibes__color_black">в начале октября ⚡</span></h5>
+                            Первая стартует <span class="viibes__h5 viibes__color_black">в середине октября ⚡</span></h5>
                     </div>
                     <div class="viibes__course_cta_main_underside_price viibes__desktop">
                         <h3 class="viibes__h3 viibes__color_purple">{{--<span class="viibes__h1_sub">стоимость</span>--}} {{ env('COURSE_PRICE') }}€</h3>
