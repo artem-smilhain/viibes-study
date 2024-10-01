@@ -1,0 +1,23 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Font Awesome
+@import '../../../../node_modules/@fortawesome/fontawesome-free/scss/brands';
+@import '../../../../node_modules/@fortawesome/fontawesome-free/scss/regular';
+@import '../../../../node_modules/@fortawesome/fontawesome-free/scss/solid';
+@import '../../../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '../../../../node_modules/bootstrap/scss/bootstrap';
+
+// AdminLTE
+@import '../../../../node_modules/admin-lte/dist/css/adminlte.css';
+
+// Datetimepicker
+@import "../../../../node_modules/@eonasdan/tempus-dominus/dist/css/tempus-dominus.css";
+//Dropzone
+@import "../../../../node_modules/dropzone/src/dropzone";
+

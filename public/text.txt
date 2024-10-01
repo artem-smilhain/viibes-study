@@ -1,0 +1,564 @@
+1.Vytvorte vzor Builder, ktorý umožní vytvoriť reťazec zložený
+z operácií "+", "-", "*" a "/" a z čísel. Vytvorte triedu Program s metódou main a pomocou
+buildera vytvorte reťazec "10 + 2 / 3 - 5".
+
+
+// Trieda reprezentujúca Builder
+class CalculatorBuilder {
+private StringBuilder expression;
+
+public CalculatorBuilder() {
+expression = new StringBuilder();
+}
+
+public CalculatorBuilder appendNumber(int number) {
+expression.append(number);
+return this;
+}
+
+public CalculatorBuilder appendOperator(char operator) {
+expression.append(" ").append(operator).append(" ");
+return this;
+}
+
+public String build() {
+return expression.toString();
+}
+}
+
+// Hlavná trieda Program s metódou main
+public class Program {
+public static void main(String[] args) {
+CalculatorBuilder builder = new CalculatorBuilder();
+String expression = builder.appendNumber(10)
+.appendOperator('+')
+.appendNumber(2)
+.appendOperator('/')
+.appendNumber(3)
+.appendOperator('-')
+.appendNumber(5)
+.build();
+
+System.out.println(expression); // Výstup: "10 + 2 / 3 - 5"
+}
+}
+
+2.Vytvorte kompozíciu pre triedu Dom zloženú z izieb a každá izba môže mať vybavenie.
+Izba má mať premenné pre veľkosť (číslo) a názov (reťazec).
+Vybavenie má mať premenné pre typ (reťazec).
+Pre triedu miestnosti implementujte rozhranie Comparable tak aby sa miestnosti usporiadali podľa veľkosti vzostupne.
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+// Rozhranie Comparable pre triedu Miestnost
+interface ComparableRoom extends Comparable {
+int getSize();
+}
+
+// Trieda Miestnost s veľkosťou a názvom
+class Miestnost implements ComparableRoom {
+private int size;
+private String name;
+
+public Miestnost(int size, String name) {
+this.size = size;
+this.name = name;
+}
+
+public int getSize() {
+return size;
+}
+
+public String getName() {
+return name;
+}
+
+@Override
+public int compareTo(ComparableRoom other) {
+return Integer.compare(this.size, other.getSize());
+}
+}
+
+// Trieda Dom s miestnosťami
+class Dom {
+private List miestnosti;
+
+public Dom() {
+miestnosti = new ArrayList<>();
+}
+
+public void pridajMiestnost(Miestnost miestnost) {
+miestnosti.add(miestnost);
+}
+
+public void usporiadajMiestnosti() {
+Collections.sort(miestnosti);
+}
+
+public void vypisMiestnosti() {
+for (Miestnost miestnost : miestnosti) {
+System.out.println("Miestnosť: " + miestnost.getName() + ", Veľkosť: " + miestnost.getSize());
+}
+}
+}
+
+// Hlavná trieda Program s metódou main
+public class Program {
+public static void main(String[] args) {
+Dom dom = new Dom();
+
+Miestnost obyvacka = new Miestnost(20, "Obyvačka");
+Miestnost spalna = new Miestnost(15, "Spálňa");
+Miestnost kuchyna = new Miestnost(10, "Kuchyňa");
+
+dom.pridajMiestnost(obyvacka);
+dom.pridajMiestnost(spalna);
+dom.pridajMiestnost(kuchyna);
+
+dom.usporiadajMiestnosti();
+dom.vypisMiestnosti();
+}
+}
+
+
+3.Pre nasledujúce rozhranie a triedu naprogramujte adaptér,
+ktorý mapuje citaj na meraj pričom skontroluje, či je teplomer zapnutý a ak nie je tak ho zapne.
+Vhodne ošetrite výnimky.
+
+
+// Rozhranie Teplomer
+interface Teplomer {
+double meraj() throws TeplomerException;
+}
+
+// Trieda RealnyTeplomer, ktorá implementuje rozhranie Teplomer
+class RealnyTeplomer implements Teplomer {
+private boolean zapnuty;
+
+public RealnyTeplomer() {
+zapnuty = false;
+}
+
+public void zapni() {
+zapnuty = true;
+System.out.println("Teplomer bol zapnutý.");
+}
+public void vypni() {
+zapnuty = false;
+System.out.println("Teplomer bol vypnutý.");
+}
+
+@Override
+public double meraj() throws TeplomerException {
+if (!zapnuty) {
+throw new TeplomerException("Teplomer nie je zapnutý.");
+}
+
+// Simulácia merania teploty
+double teplota = Math.random() * 100;
+return teplota;
+}
+}
+
+
+
+
+// Výnimka pre chyby v teplomere
+class TeplomerException extends Exception {
+public TeplomerException(String message) {
+super(message);
+}
+}
+
+// Adaptér TeplomerAdapter, ktorý mapuje citaj na meraj a kontroluje, či je teplomer zapnutý
+class TeplomerAdapter {
+private RealnyTeplomer teplomer;
+
+public TeplomerAdapter(RealnyTeplomer teplomer) {
+this.teplomer = teplomer;
+}
+
+
+public double citaj() throws TeplomerException {
+if (!teplomer.jeZapnuty()) {
+teplomer.zapni();
+}
+
+return teplomer.meraj();
+}
+}
+
+// Hlavná trieda Program s metódou main
+public class Program {
+public static void main(String[] args) {
+RealnyTeplomer realnyTeplomer = new RealnyTeplomer();
+
+TeplomerAdapter teplomerAdapter = new TeplomerAdapter(realnyTeplomer);
+
+try {
+double teplota = teplomerAdapter.citaj();
+System.out.println("Teplota: " + teplota);
+} catch (TeplomerException e) {
+System.out.println("Chyba: " + e.getMessage());
+}
+}
+}
+
+
+
+4. Pre nasledujúcu triedu naprogramujte vzor Visitor
+ktorý prechádza uzly post-order, tzn. najprv sa prejdú všetci jeho potomkovia a až potom uzol.
+Triedu UzolVisitor naprogramujte tak,
+aby spojila do zoznamu všetky listy stromu (tzn. uzly bez potomkov).
+
+import java.util.ArrayList;
+import java.util.List;
+
+// Rozhranie pre návštevníka (Visitor)
+interface Návštevník {
+void navštív(Uzol uzol);
+}
+
+// Trieda Uzol
+class Uzol {
+private Uzol ľavý;
+private Uzol pravý;
+
+public Uzol(Uzol ľavý, Uzol pravý) {
+this.ľavý = ľavý;
+this.pravý = pravý;
+}
+
+public Uzol getĽavý() {
+return ľavý;
+}
+
+public Uzol getPravý() {
+return pravý;
+}
+
+public void prijmi(Návštevník návštevník) {
+if (ľavý != null) {
+ľavý.prijmi(návštevník);
+}
+
+if (pravý != null) {
+pravý.prijmi(návštevník);
+}
+
+návštevník.navštív(this);
+}
+}
+
+// Trieda UzolVisitor, ktorá spojí do zoznamu všetky listy stromu
+class UzolVisitor implements Návštevník {
+private List listy;
+
+public UzolVisitor() {
+listy = new ArrayList<>();
+}
+
+public List getListy() {
+return listy;
+}
+
+@Override
+public void navštív(Uzol uzol) {
+if (uzol.getĽavý() == null && uzol.getPravý() == null) {
+listy.add(uzol);
+}
+}
+}
+
+// Hlavná trieda Program s metódou main
+public class Program {
+public static void main(String[] args) {
+// Vytvorenie stromu
+Uzol list1 = new Uzol(null, null);
+Uzol list2 = new Uzol(null, null);
+Uzol list3 = new Uzol(null, null);
+Uzol list4 = new Uzol(null, null);
+Uzol uzol1 = new Uzol(list1, list2);
+Uzol uzol2 = new Uzol(uzol1, list3);
+Uzol koreň = new Uzol(uzol2, list4);
+
+// Vytvorenie návštevníka a spracovanie stromu
+UzolVisitor uzolVisitor = new UzolVisitor();
+koreň.prijmi(uzolVisitor);
+
+// Získanie výsledného zoznamu listov
+List listy = uzolVisitor.getListy();
+
+// Výpis listov
+for (Uzol list : listy) {
+System.out.println(list);
+}
+}
+}
+
+
+5.Vytvorte vzor Builder, ktorý umožní vytvoriť zoznam s vnorenými zoznamami hodnôt
+(tzn. metódy umožnia vložiť ďalší podzoznam a vložiť prvok do podzoznamu).
+Vytvorte triedu Program s metódou main a pomocou buildera vytvorte nasledujúci zoznam [[1,2],[3,4,5]].
+
+import java.util.ArrayList;
+import java.util.List;
+
+// Trieda ZoznamBuilder
+class ZoznamBuilder {
+private List> zoznam;
+public ZoznamBuilder() {
+zoznam = new ArrayList<>();
+}
+
+public ZoznamBuilder vytvorPodzoznam() {
+List podzoznam = new ArrayList<>();
+zoznam.add(podzoznam);
+return this;
+}
+
+public ZoznamBuilder vlozPrvok(int prvok) {
+if (zoznam.isEmpty()) {
+vytvorPodzoznam();
+}
+List poslednyPodzoznam = zoznam.get(zoznam.size() - 1);
+poslednyPodzoznam.add(prvok);
+return this;
+}
+
+public List> build() {
+return zoznam;
+}
+}
+
+// Hlavná trieda Program s metódou main
+public class Program {
+public static void main(String[] args) {
+ZoznamBuilder builder = new ZoznamBuilder();
+List> zoznam = builder
+.vytvorPodzoznam()
+.vlozPrvok(1)
+.vlozPrvok(2)
+.vytvorPodzoznam()
+.vlozPrvok(3)
+.vlozPrvok(4)
+.vlozPrvok(5)
+.build();
+
+// Výpis zoznamu
+System.out.println(zoznam);
+}
+}
+Odstrániť
+19:40: Vytvorte kompozíciu pre triedu reprezentujúcu prepravnú zásielku zloženú
+z tovarových položiek a adries odosieľateľa a prijímateľa.
+Položka nech má popis (string) a cenu (int).
+Adresy nech majú ulicu, mesto (reťazec) a PSČ (int).
+Pre adresu implementujte metódu equals, tak aby ste zahrnuli všetky členská položky.
+
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
+// Trieda pre položku tovaru
+class PolozkaTovaru {
+private String popis;
+private int cena;
+
+public PolozkaTovaru(String popis, int cena) {
+this.popis = popis;
+this.cena = cena;
+}
+
+// Gettery a Settery
+
+public String getPopis() {
+return popis;
+}
+
+public void setPopis(String popis) {
+this.popis = popis;
+}
+
+public int getCena() {
+return cena;
+}
+
+public void setCena(int cena) {
+this.cena = cena;
+}
+}
+
+// Trieda pre adresu
+class Adresa {
+private String ulica;
+private String mesto;
+private int psc;
+
+public Adresa(String ulica, String mesto, int psc) {
+this.ulica = ulica;
+this.mesto = mesto;
+this.psc = psc;
+}
+
+// Gettery a Settery
+
+public String getUlica() {
+return ulica;
+}
+
+public void setUlica(String ulica) {
+this.ulica = ulica;
+}
+
+public String getMesto() {
+return mesto;
+}
+
+public void setMesto(String mesto) {
+this.mesto = mesto;
+}
+
+public int getPSC() {
+return psc;
+}
+
+public void setPSC(int psc) {
+this.psc = psc;
+}
+
+// Implementácia metódy equals
+
+@Override
+public boolean equals(Object o) {
+if (this == o) return true;
+if (o == null || getClass() != o.getClass()) return false;
+Adresa adresa = (Adresa) o;
+return psc == adresa.psc && ulica.equals(adresa.ulica) && mesto.equals(adresa.mesto);
+}
+
+@Override
+public int hashCode() {
+return Objects.hash(ulica, mesto, psc);
+}
+}
+
+// Trieda reprezentujúca prepravnú zásielku
+class Zasielka {
+private List polozky;
+private Adresa odosielatel;
+private Adresa prijemca;
+
+public Zasielka() {
+polozky = new ArrayList<>();
+odosielatel = new Adresa("", "", 0);
+prijemca = new Adresa("", "", 0);
+}
+
+// Gettery a Settery
+
+public List getPolozky() {
+return polozky;
+}
+
+public void setPolozky(List polozky) {
+this.polozky = polozky;
+}
+
+public Adresa getOdosielatel() {
+return odosielatel;
+}
+
+public void setOdosielatel(Adresa odosielatel) {
+this.odosielatel = odosielatel;
+}
+
+public Adresa getPrijemca() {
+return prijemca;
+}
+
+
+
+Pre nasledujúcu triedu implementujte rozhranie Iterable tak, aby iterátor prechádzal iba čísla väčšie ako 10.
+
+
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
+class MojaTrieda implements Iterable {
+private int[] pole;
+
+public MojaTrieda(int[] pole) {
+this.pole = pole;
+}
+
+@Override
+public Iterator iterator() {
+return new MojaIterator();
+}
+
+private class MojaIterator implements Iterator {
+private int currentIndex;
+
+public MojaIterator() {
+currentIndex = 0;
+}
+
+@Override
+public boolean hasNext() {
+while (currentIndex < pole.length) {
+if (pole[currentIndex] > 10) {
+return true;
+}
+currentIndex++;
+}
+return false;
+}
+
+@Override
+public Integer next() {
+if (hasNext()) {
+int nextValue = pole[currentIndex];
+currentIndex++;
+return nextValue;
+}
+throw new NoSuchElementException();
+}
+}
+}
+
+// Hlavná trieda Program s metódou main
+public class Program {
+public static void main(String[] args) {
+int[] pole = {5, 15, 8, 20, 12};
+MojaTrieda mojaTrieda = new MojaTrieda(pole);
+
+for (int cislo : mojaTrieda) {
+System.out.println(cislo);
+}
+}
+}
+
+
+4. Pre nasledujúce rozhranie a triedu naprogramujte adaptér, ktorý mapuje klasifikuj na predikuj. Mtóda klasifikuj najprv nastavý dáta a vráti hodnotu 1 ak je predikcia kladná, inak vráti 0. Vhodne ošetrite výnimky.
+
+Public interface Klasifikator {
+
+public int klasifikuj(int [] data) throws IllegalStateException;
+
+}
+
+public class NeuronovaSiet {
+
+public void nastavVstup(int data[]) throws IllegalArgumentException { }
+
+public double predikuj() throws Exception {
+
+return 1.3;
+
+}
+
+}

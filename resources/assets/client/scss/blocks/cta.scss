@@ -1,0 +1,141 @@
+.viibes{
+  &__cta{
+    background-color: #F7EBFE;
+    padding-top: 4rem;
+    &_form{
+      & p{
+        max-width: 70%;
+      }
+    }
+    span{
+      display: block;
+    }
+    &_content{
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    &_image{
+      margin-bottom: -4rem;
+      //align-self: flex-end;
+      max-width: 42%;
+    }
+    .viibes{
+      &__wrap{
+
+        padding-bottom: 4rem;
+        overflow: hidden;
+          isolation: isolate;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        width: 100%;
+        align-items: center;
+        gap: 8rem;
+        &_sub{
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          gap: 3rem;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+  .viibes{
+    &__cta{
+        &_image{
+            max-width: 80%;
+        }
+      &_form{
+        & p{
+          max-width: 90%;
+        }
+      }
+      .viibes{
+        &__wrap{
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 0px) and (max-width: 767px){
+  .viibes{
+    &__cta{
+      padding-top:11rem;
+      &_form{
+        & p{
+          max-width: unset;
+        }
+      }
+      .viibes{
+        &__wrap{
+          flex-direction: column;
+          & img{
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+// cta_contacts
+#cta_contacts{
+  padding-top: 3rem;
+  span{
+    display: unset;
+  }
+  .viibes{
+    &__wrap{
+      &_sub{
+        gap: 4rem;
+      }
+    }
+  }
+}
+@media (min-width: 768px) and (max-width: 991px){
+  #cta_contacts {
+    padding-top: 9rem;
+  }
+}
+@media (min-width: 0px) and (max-width: 767px){
+  .viibes{
+    &__cta{
+      &_image{
+        max-width: unset;
+      }
+    }
+  }
+  #cta_contacts{
+    padding-top: 11rem;
+    .viibes{
+      &__contacts{
+        &_list{
+          margin-top: 0;
+            gap: 3rem;
+        }
+          &_row{
+              gap: 1rem;
+              flex-direction: column;
+              align-items: start;
+          }
+      }
+      &__wrap{
+        &_sub{
+          gap: 4rem;
+        }
+      }
+    }
+  }
+}
+
+#cta_programs{
+  span{
+    display: unset;
+  }
+}

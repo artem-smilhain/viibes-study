@@ -1,0 +1,128 @@
+@import "../base/variables";
+.viibes{
+  &__sidebar{
+    &_university{ //УНИВЕРСИТЕТ
+      background: $bg_purple;
+      border-radius: 3rem;
+      padding: 4rem 3rem 5rem 3rem;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      box-sizing: border-box;
+      & .viibes__btn_link{
+        font-size: 2.25rem;
+        & img{
+          width: 3.375rem;
+          height: 3.375rem;
+        }
+      }
+      & form{
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
+      & input{
+        font-size: 2rem;
+        padding: 2rem 3rem;
+        height: fit-content;
+        width: 100%;
+      }
+      & button{
+        font-size: 2rem;
+        padding: 2rem 3rem;
+      }
+    }
+    &_universities{ //УНИВЕРСИТЕТЫ
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      & .viibes__btn_link{
+        font-size: 2.25rem;
+        & img{
+          width: 3.375rem;
+          height: 3.375rem;
+        }
+      }
+      &_first{
+        background: $bg_purple;
+        border-radius: 3rem;
+        padding: 4rem 3rem 5rem 3rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        box-sizing: border-box;
+        & form{
+          flex-wrap: wrap;
+          gap: 2rem;
+        }
+        & input{
+          font-size: 2rem;
+          padding: 2rem 3rem;
+          height: fit-content;
+          width: 100%;
+        }
+        & button{
+          font-size: 2rem;
+          padding: 2rem 3rem;
+        }
+      }
+      &_second{
+        padding: 3rem 3rem 0 3rem;
+        background-color: $bg_purple;
+        border-radius: 3rem;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        &_img{
+          width: 100%;
+          margin-top: 1rem;
+        }
+      }
+    }
+      &_content{ //КОНТЕНТ НА СТРАНИЦАХ
+          &_inner{
+              display: flex;
+              flex-direction: column;
+              gap: 2rem;
+              border-top: 1px solid $bg_gray;
+              padding-top: 2rem;
+              margin-top: 3rem;
+              &:first-child{
+                  border-top: none !important;
+                  padding-top: 0;
+                  margin-top: 0;
+              }
+              .viibes__preview_tags{
+                  margin: 0;
+              }
+          }
+          .viibes__btn_link{
+              font-size: 2.25rem;
+          }
+      }
+  }
+}
+
+@media (min-width: 0) and (max-width: 767px){
+  .viibes{
+    &__sidebar{
+      &_university{
+        & .viibes__h4{
+          font-weight: 700;
+          font-size: 3.25rem;
+          line-height: 144%;
+          color: $text_black;
+        }
+      }
+      &_universities{
+        & .viibes__h4{
+          font-weight: 700;
+          font-size: 3.25rem;
+          line-height: 144%;
+          color: $text_black;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,267 @@
+@import "variables";
+html{
+  overflow-x: hidden;
+}
+a{
+  text-decoration: none;
+}
+.viibes{
+  &__video{
+    overflow: hidden;
+    border-radius: 3rem;
+    isolation: isolate;
+    &_overlay{
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(1.5px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  &__mobile{ display: none; }
+  &_desktop{ display: block; }
+}
+//buttons
+.viibes{
+  &__btn_large , &__btn_medium, &__btn_small, &__btn_slim{
+    box-sizing: border-box;
+    background-color: $bg_purple_cta;
+    color: $text-white;
+    font-weight: 800;
+    line-height: 152%;
+    border: 0;
+    cursor: pointer;
+    white-space: nowrap;
+    width: fit-content;
+    text-decoration: none;
+    display: block;
+    height: fit-content;
+    transition-duration: $transition_duration;
+
+  }
+    &__btn_animation{
+        position: relative;
+        overflow: hidden;
+        isolation: isolate;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+        &:after{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1.5em;
+            height: 100%;
+            background-color: #ffffff73;
+            transform: translateX(-4em) skewX(-45deg);
+            animation: move-light 5500ms infinite;
+            animation-delay: 1s;
+        }
+    }
+    @-webkit-keyframes move-light {
+        0% { transform: translateX(-4em) skew(-45deg); }
+        60% { transform: translateX(45em) skew(-45deg); }
+        100% { transform: translateX(45em) skew(-45deg); }
+    }
+    @keyframes move-light {
+        0% { transform: translateX(-4em) skew(-45deg); }
+        60% { transform: translateX(45em) skew(-45deg); }
+        100% { transform: translateX(45em) skew(-45deg); }
+    }
+  &__btn_large , &__btn_medium, &__btn_small, &__btn_slim, &__btn_link{
+    &:hover{
+      filter: brightness(1.2)
+    }
+  }
+  &__btn_large{
+    padding: 3rem 6rem;
+    font-size: 2.5rem;
+    border-radius: 5rem;
+  }
+  &__btn_medium{
+    padding: 2.5rem 5rem;
+    font-size: 2.5rem;
+    border-radius: 5rem;
+  }
+  &__btn_small{
+    padding: 2rem 3rem;
+    font-size: 2rem;
+    border-radius: 3.75rem;
+  }
+  &__btn_slim{
+    padding: 1.5rem 3rem;
+    font-size: 2rem;
+    border-radius: 3.75rem;
+  }
+  &__btn_link{
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 2.75rem;
+    line-height: 144%;
+    color: $text_purple;
+    text-decoration: none;
+    gap: .5rem;
+    width: fit-content;
+    white-space: nowrap;
+    transition-duration: $transition_duration;
+    img{
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+  //&__btn_link{
+  //  color: $text_purple;
+  //  font-weight: 400;
+  //  font-size: 2rem;
+  //  line-height: 152%;
+  //}
+}
+//colors
+.viibes{
+  &__color_black{
+    color: $text_black !important;
+  }
+  &__color_white{
+    color: $text_white !important;
+  }
+  &__color_gray{
+    color: $text_gray !important;
+  }
+  &__color_purple{
+    color: $text_purple !important;
+  }
+  &__color_lightblue{
+    color: $text_light_blue !important;
+  }
+  &__color_yellow{
+    color: $text_yellow !important;
+  }
+  &__color_blue{
+    color: $text_blue !important;
+  }
+  &__color_instagram{
+    color: $text_instagram;
+  }
+  &__color_facebook{
+    color: $text_facebook;
+  }
+  &__color_telegram{
+    color: $text_telegram;
+  }
+  &__color_whatsapp{
+    color: $text_whatsapp;
+  }
+  &__color_viber{
+    color: $text_viber;
+  }
+  &__color_placeholder{
+    color: $text_placeholder;
+  }
+}
+//background colors
+.viibes {
+  &__bg_white {
+    background-color: $bg_white !important;
+  }
+
+  &__bg_gray {
+    background-color: $bg_gray !important;
+  }
+
+  &__bg_gray_hover {
+    :hover {
+      background-color: $bg_gray_hover !important;
+    }
+  }
+
+  &__bg_purple {
+    background-color: $bg_purple !important;
+  }
+
+  &__bg_lightblue {
+    background-color: $bg_light_blue !important;
+  }
+
+  &__bg_yellow {
+    background-color: $bg_yellow !important;
+  }
+
+  &__bg_blue {
+    background-color: $bg_blue !important;
+  }
+
+  &__bg_purple_cta {
+    background-color: $bg_purple_cta !important;
+  }
+
+  &__bg_instagram {
+    background-color: $bg_instagram;
+  }
+
+  &__bg_facebook {
+    background-color: $bg_facebook;
+  }
+
+  &__bg_telegram {
+    background-color: $bg_telegram;
+  }
+
+  &__bg_whatsapp {
+    background-color: $bg_whatsapp;
+  }
+
+  &__bg_viber {
+    background-color: $bg_viber;
+  }
+}
+@media (min-width: 0px) and (max-width: 767px){
+  .viibes {
+    &__mobile{
+      display: block;
+    }
+    &__desktop{
+      display: none !important;
+    }
+    &__btn_large, &__btn_medium, &__btn_small, &__btn_slim {
+
+    }
+    &__btn_large{
+      width: 100%;
+      text-align: center;
+      padding: 2.5rem 5rem;
+      font-size: 2rem;
+      border-radius: 5rem;
+    }
+    &__btn_medium{
+      padding: 2rem 4rem;
+      font-size: 2rem;
+      border-radius: 5rem;
+    }
+    &__btn_small{
+      padding: 2rem 4rem;
+      font-size: 2rem;
+      border-radius: 3.75rem;
+    }
+    &__btn_slim{
+      padding: 1.5rem 3rem;
+      font-size: 2rem;
+      border-radius: 3.75rem;
+    }
+    &__btn_link{
+      font-size: 2rem;
+      img{
+        width: 3rem;
+        height: 3rem;
+      }
+    }
+  }
+}
+

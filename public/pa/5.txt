@@ -1,0 +1,61 @@
+
+#descriptivne DM
+
+install.packages("dplyr")
+library(dplyr)
+
+install.packages('arules')
+library(arules)
+
+mtcars = read.csv("http://peter.butka.website.tuke.sk/res/mtcars.csv")
+
+mtcars1 = select(mtcars, hp, drat)
+
+set.seed(123)
+kmeans.results1 = kmeans(mtcars1, 2)
+kmeans.results1
+
+table(mtcars1$drat, kmeans.results1$cluster) 
+
+plot(mtcars1, col = kmeans.results1$cluster)
+points(kmeans.results1$centers, col = 1:3, pch = 8, cex = 2)
+
+mtcars2=select(mtcars, mpg, qsec)
+
+hc2 = hclust(dist(mtcars2), method = "ave") 
+print(hc2)
+
+plot(hc2, hang = -1)
+rect.hclust(hc2, k = 3)
+
+mtcars$groups = cutree(hc2, k = 3)
+
+AdultUCI = read.csv("http://peter.butka.website.tuke.sk/res/AdultUCI_world.csv")
+str(AdultUCI)
+
+AdultUCI = AdultUCI%>%mutate_if(is.character, as.factor)
+str(AdultUCI)
+
+AdultUCI1 = select_if(AdultUCI, is.factor)
+
+rules1 = apriori(AdultUCI1)
+inspect(rules1)
+
+summary(AdultUCI1$income)
+
+rules1 = apriori(AdultUCI1, control = list(verbose=F), parameter = list(minlen=4,
+supp=0.01, conf=0.68), appearance =
+list(rhs=c("income=large","income=small"), default="lhs"))
+quality(rules1) <- round(quality(rules1), digits=3)
+rules1.sorted <- sort(rules1, by="lift")
+inspect(rules1.sorted)
+
+
+inspect(rules1.sorted[is.redundant(rules1.sorted)])
+inspect(rules1.sorted[!is.redundant(rules1.sorted)])
+
+
+rules1.pruned = rules1.sorted[!is.redundant(rules1.sorted)]
+inspect(rules1.pruned)
+
+

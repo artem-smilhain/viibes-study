@@ -1,0 +1,255 @@
+@import "../base/variables";
+//default form
+.viibes{
+  &__cta_form{
+    padding: 14rem 0;
+    form{
+      margin-top: 4rem;
+    }
+    p{
+      margin-top: 1rem;
+    }
+  }
+  &__form{
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    width: 100%;
+    & input{
+      width: 100%;
+      border: 0;
+      padding: 3rem 4rem;
+      color: $text_gray;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 150%;
+      border-radius: 5rem;
+      outline:none;
+      box-sizing: border-box;
+      &::placeholder{
+        color: $text_placeholder;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .viibes {
+    &__form {
+      flex-direction: column;
+    }
+  }
+}
+
+@media (min-width: 0px) and (max-width: 767px) {
+  .viibes {
+    &__cta_form{
+      padding: 11rem 0;
+      .viibes{
+        &__form{
+          margin-top: 3rem;
+        }
+      }
+    }
+    &__form {
+      flex-direction: column;
+      gap: 2rem;
+
+      & input {
+        font-size: 2rem;
+        padding: 2.5rem 3rem;
+      }
+    }
+  }
+}
+
+//cta_form_study
+#cta_form_study{
+  span{
+    display: block;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+  #cta_form_study{
+    span{
+      display: unset;
+    }
+  }
+}
+
+@media (min-width: 0px) and (max-width: 767px){
+  #cta_form_study{
+    span{
+      display: unset;
+    }
+  }
+}
+
+//cta_form_course
+
+#cta_form_course{
+  span{
+    display: block;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+  #cta_form_course{
+
+  }
+}
+
+@media (min-width: 0px) and (max-width: 767px){
+  #cta_form_course{}
+}
+
+//cta_form_main
+
+#cta_form_main{
+  background-color: $bg_purple;
+  span{
+    display: block;
+  }
+  .viibes{
+    &__wrap{
+      display: flex;
+      flex-direction: column;
+      gap: 5rem;
+    }
+    &__cta_form_main{
+      &_content{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        grid-column-gap: 3rem;
+      }
+      &_form{
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        padding: 4rem 5rem;
+        border-radius: 3rem;
+        background: #F2DBFF;
+      }
+      &_more{
+        padding: 4rem 5rem;
+        border: 3px solid #F2DBFF;
+        border-radius: 2.5rem;
+        position: relative;
+        overflow: hidden;
+          isolation: isolate;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        &_list{
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+          padding: 0;
+          margin: 0;
+          list-style-type: none;
+          max-width: calc(100% - 228px + 40px);
+          span{
+            display: unset;
+          }
+        }
+        img{
+          position: absolute;
+          right: -1px;
+          bottom: 0;
+        }
+      }
+    }
+    &__form{
+      flex-direction: column;
+      margin-top: 0;
+    }
+
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+  .viibes__faculty{
+    & .viibes__modal_form{
+      overflow-y: scroll;
+      overflow-x: hidden;
+      align-items: unset;
+    }
+  }
+  #cta_form_main{
+      padding-top: 10rem;
+      padding-bottom: 0;
+    .viibes{
+      &__cta_form {
+
+        &_main {
+
+          &_more{
+            img{
+              display: none;
+            }
+            &_list{
+              max-width: 100%;
+            }
+          }
+          &_content {
+            grid-template-columns: 1fr;
+            grid-row-gap: 3rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 0px) and (max-width: 767px){
+  .viibes__faculty{
+    & .viibes__modal_form{
+      overflow-y: scroll;
+      overflow-x: hidden;
+      align-items: unset;
+    }
+  }
+  #cta_form_main{
+    padding: 0;
+    height: fit-content;
+    span{
+      display: unset;
+    }
+    .viibes{
+      &__h2{
+        padding: 0 2rem;
+      }
+      &__wrap{
+        max-width: 100%;
+        padding: 11rem 0 0 0 ;
+        gap: 4rem;
+
+      }
+      &__cta_form {
+        &_main {
+          &_more{
+            border-radius: 0;
+            padding: 4rem 2rem 11rem 2rem;
+            border: 0;
+            gap: 2rem;
+            img{
+              display: none;
+            }
+            &_list{
+              max-width: 100%;
+            }
+          }
+          &_content {
+            grid-template-columns: 1fr;
+          }
+          &_form{
+            border-radius: 0;
+            padding: 6rem 2rem;
+          }
+        }
+      }
+    }
+  }
+}

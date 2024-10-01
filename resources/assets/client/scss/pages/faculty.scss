@@ -1,0 +1,162 @@
+@import "../base/variables";
+.viibes{
+  &__faculty{
+    &_main{
+      &_content{
+        &_list{
+          //display: flex;
+          //flex-direction: column;
+          //gap: 3rem;
+          &_item{
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            &_info{
+              //display: flex;
+              //flex-direction: column;
+              //gap: 1rem;
+                ul{
+                    margin: 0;
+                    padding: 0;
+                    list-style-type: none;
+                    li{
+                        margin-bottom: 1rem;
+                        &:last-child{
+                            margin-bottom: 0 !important;
+                        }
+                    }
+                }
+              & a{
+                color: unset;
+                transition-duration: $transition_duration;
+                &:hover{
+                  text-decoration: underline;
+                }
+              }
+            }
+          }
+
+          &_item{
+            &_specialties{
+              display: flex;
+              flex-direction: column;
+              gap: 2rem;
+              & h4{
+                margin-top: 1rem;
+              }
+              &_speciality{
+                padding: 2.25rem 3rem;
+                display: grid;
+                column-gap: 10rem;
+                grid-template-columns: 1.3fr 1fr;
+                border-radius: 3rem;
+                &_name{
+                  font-weight: 500;
+                  font-size: 2.5rem;
+                  line-height: 144%;
+                  width: fit-content;
+                  transition-duration: $transition_duration;
+                  &:hover{
+                    text-decoration: underline;
+                  }
+                }
+                  &_tags{
+                      display: flex;
+                      justify-content: end;
+                      gap: 1rem;
+                  }
+                  &_tag{
+                      padding: 0.75rem 1rem;
+                      border-radius: 1rem;
+                      font-weight: 600;
+                      font-size: 1.75rem;
+                      line-height: 152%;
+                      width: fit-content;
+                      height: fit-content;
+                      justify-self: flex-end;
+                      margin-bottom: 1rem;
+                      transition-duration: $transition_duration;
+                  }
+                &_university{
+                  font-weight: 400;
+                  font-size: 2rem;
+                  line-height: 144%;
+                  transition-duration: $transition_duration;
+                  &:hover{
+                    text-decoration: underline;
+                  }
+                }
+                &_code{
+                  font-weight: 400;
+                  font-size: 2rem;
+                  line-height: 144%;
+                  justify-self: flex-end;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+  .viibes__faculty_main_content{
+    &_list_item_specialties_speciality{
+      column-gap: 5rem;
+    }
+    &_sidebar{
+      display: none;
+    }
+
+  }
+}
+@media (min-width: 0) and (max-width: 767px){
+  .viibes{
+    &__faculty{
+      &_main{
+        &_content{
+          &_list{
+            &_item{
+              gap: 1rem;
+              &_info{
+                //gap: .5rem;
+              }
+              &_specialties{
+                gap: 1rem;
+                &_speciality{
+                  grid-template-columns: 1fr;
+                  padding: 2rem 2.5rem;
+                  &_name{
+                    font-size: 2.25rem;
+                  }
+                    &_tags{
+                        justify-content: start;
+                    }
+                  &_tag{
+                    justify-self: flex-start;
+                    font-size: 1.5rem;
+                    padding: .5rem 1rem;
+                    margin-top: 1.25rem;
+                    margin-bottom: 0;
+                  }
+                  &_university{
+                    order: 1;
+                    font-size: 1.75rem;
+
+                  }
+                  &_code{
+                    justify-self: flex-start;
+                    font-size: 1.75rem;
+                    margin-top: 1rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

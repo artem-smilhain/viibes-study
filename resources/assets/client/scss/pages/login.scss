@@ -1,0 +1,18 @@
+.viibes {
+    &__login {
+        .viibes__header {
+            & path {
+                fill: $text_purple;
+            }
+
+            &_list {
+                & a {
+                    color: $text_gray;
+                }
+            }
+        }
+        &_preview{
+            padding: 18rem 0 7rem 0;
+        }
+    }
+}

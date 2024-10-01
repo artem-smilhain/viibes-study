@@ -1,0 +1,46 @@
+@import "../base/variables";
+.viibes{
+  &__telegram_circle, &__whatsapp_circle, &__viber_circle, &__instagram_circle, &__facebook_circle{
+    width: 7rem;
+    height: 7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition-duration: $transition_duration;
+    img{
+      width: 4.25rem;
+      height: 4.25rem;
+    }
+  }
+  &__telegram_circle{
+    background-color: $bg_telegram;
+    &:hover{
+      background-color: $bg_telegram__hover;
+    }
+  }
+  &__whatsapp_circle{
+    background-color: $bg_whatsapp;
+    &:hover{
+      background-color: $bg_whatsapp__hover;
+    }
+  }
+  &__viber_circle{
+    background-color: $bg_viber;
+    &:hover{
+      background-color: $bg_viber__hover;
+    }
+  }
+  &__instagram_circle{
+    background-color: $bg_instagram;
+    &:hover{
+      background-color: $bg_instagram__hover;
+    }
+  }
+  &__facebook_circle{
+    background-color: $bg_facebook;
+    &:hover{
+      background-color: $bg_facebook__hover;
+    }
+  }
+}

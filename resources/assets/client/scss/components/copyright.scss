@@ -1,0 +1,63 @@
+@import "../base/variables";
+
+.viibes{
+  &__copyright{
+    display: flex;
+    gap: 2rem;
+    &_hand{
+      width: 6rem;
+      height: 6rem;
+    }
+    &_content{
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      & p{
+        font-weight: 600;
+        font-size: 2rem;
+        line-height: 144%;
+        color: $text_black;
+        margin: 0;
+      }
+      &_main{
+        display: flex;
+        align-items: center;
+        & span{
+          font-weight: 500;
+          font-size: 2rem;
+          line-height: 144%;
+          color: $text_gray;
+        }
+        & img{
+          width: 2.875rem;
+          height: 2.875rem;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 0) and (max-width: 767px){
+  .viibes{
+    &__copyright{
+      &_hand{
+        width: 5.25rem;
+        height: 5.25rem;
+      }
+      &_content{
+        & p{
+          font-size: 1.75rem;
+        }
+        &_main{
+          & span{
+            font-size: 1.75rem;
+          }
+          & img{
+            width: 2.5rem;
+            height: 2.5rem;
+          }
+        }
+      }
+    }
+  }
+}

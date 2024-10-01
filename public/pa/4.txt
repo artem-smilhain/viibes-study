@@ -1,0 +1,170 @@
+# библиотеки
+{
+  library(readr) 
+  library(dplyr) 
+  library(tidyr) 
+  library(ggplot2)
+}
+
+#1 - Lineárna regresia
+{
+  pr <- data.frame(poc_rokov = c(4, 7, 9, 12, 3, 5, 11, 21, 1, 14),
+                   prijem = c(32, 54, 64, 70, 36, 41, 59, 90, 20, 79)) 
+  
+  # create linear regression model
+  model = lm(prijem ~ poc_rokov, pr) 
+  
+  # predict data in new column in table
+  pr$predicted <- NA
+  pr_new <- data.frame(poc_rokov = pr$poc_rokov)
+  pr$predicted <- predict.lm(model, newdata = pr_new)
+  
+  # plot graphic of linear model
+  ggplot(pr) + 
+    geom_line(aes(x=poc_rokov, y=predicted)) + 
+    geom_point(aes(x=poc_rokov, y=prijem),color="blue", size=2)
+  
+  # create new data and predict new values
+  pr1 <- data.frame(poc_rokov = c(10, 15, 20))
+  pr1$prijem <- NA
+  pr1$prijem <- predict(model, newdata = pr1)
+}
+
+#2 - Viacnásobná regresia
+{
+  # подгрузка данных
+  state <- read_csv("/Users/smilhain/Desktop/DataSpellProjects/zadanie/state.csv")
+  colnames(state)[1] <- "Name"
+  
+  # create multiple regression model
+  model2 <- lm(Murder ~ Illiteracy + Life.Exp, state)
+  
+  # predict data in new column in table
+  state$Murder_Predict <- NA
+  state_new <- data.frame(Illiteracy = state$Illiteracy, Life.Exp = state$Life.Exp)
+  state$Murder_Predict <- predict(model2, newdata = state_new)
+  
+  # plot graphic of linear model
+  ggplot(state) + 
+    geom_point(aes(x = c(1:nrow(state)), y=Murder), color="blue", size=2) +
+    geom_line(aes(x = c(1:nrow(state)), y=Murder_Predict), color="red") + 
+    geom_point(aes(x = c(1:nrow(state)), y=Murder_Predict), color="red", size=2)
+  
+  # model summary
+  summary(model2)
+}
+
+#3 - Rozhodovací strom
+{
+  # load required libraries
+  library(rpart)
+  library(rpart.plot)
+  
+  # load data
+  CO2 <- read_csv("/Users/smilhain/Desktop/DataSpellProjects/zadanie/CO2.csv")
+  CO2$Plant <- NULL
+  colnames(CO2)[1] <- "Num"
+  CO2$Num <- NULL
+  
+  # split data to train and test
+  split1 <- sample(c(rep(0, round(0.7 * nrow(CO2), 0)), rep(1, round(0.3 * nrow(CO2), 0))))
+  train_data <- CO2[split1 == 0, ]
+  test_data <- CO2[split1 == 1, ]
+  
+  # create Decision tree model
+  co2_tree <- rpart(Treatment ~ ., data = train_data, method = 'class')
+  
+  # plot Decision tree
+  rpart.plot(co2_tree)
+  
+  # predict new data
+  testPred_tree <- predict(co2_tree, test_data, type = 'class')
+  
+  # Confusion Matrix
+  tbl <- table(test_data$Treatment, testPred_tree)
+  tbl
+  # TP - tbl[1,1]; TN - tbl[2,2]; FP - tbl[2,1]; FN - tbl[1,2]
+  precision <- tbl[1,1]/(tbl[1,1] + tbl[2,1])
+  accuracy <- sum(diag(tbl)) / sum(tbl)
+  recall <- tbl[1,1]/(tbl[1,1] + tbl[1,2]) # Sensitivity
+  F1 <- 2*tbl[1,1]/(2*tbl[1,1] + tbl[2,1] + tbl[1,2])
+}
+
+#4 - Naivný Bayesovský klasifikátor
+{
+  library(naivebayes)
+  
+  co2_NB <- naive_bayes(Treatment ~ conc+uptake, data = train_data) 
+  
+
+  p <- predict(co2_NB, test_data) # predict new data
+  
+  # Confusion Matrix
+  tbl_NB <- table(test_data$Treatment, p)
+  tbl_NB 
+  precision_NB <- tbl_NB[1,1]/(tbl_NB[1,1] + tbl_NB[2,1])
+  accuracy_NB <- sum(diag(tbl_NB)) / sum(tbl_NB)
+  recall_NB <- tbl_NB[1,1]/(tbl_NB[1,1] + tbl_NB[1,2]) # Sensitivity
+  F1_NB <- 2*tbl_NB[1,1]/(2*tbl_NB[1,1] + tbl_NB[2,1] + tbl_NB[1,2])
+  
+  # load required libraries
+  library(arules)
+  
+  # discretize data
+  CO2_dis <- CO2
+  CO2_dis$conc <- discretize(CO2_dis$conc)
+  CO2_dis$uptake <- discretize(CO2_dis$uptake)
+  train_data_dis <- CO2_dis[split1 == 0, ]
+  test_data_dis <- CO2_dis[split1 == 1, ]
+  
+  # create Naive Bayes model
+  co2_NB_2 <- naive_bayes(Type ~ conc+uptake, data = train_data_dis) 
+  
+  # predict new data
+  p_2 <- predict(co2_NB_2, test_data_dis) 
+  
+
+  tbl_NB_2 <- table(test_data_dis$Type, p_2)
+  tbl_NB_2 
+
+
+  precision_NB <- tbl_NB_2[1,1]/(tbl_NB_2[1,1] + tbl_NB_2[2,1])
+  accuracy_NB <- sum(diag(tbl_NB_2)) / sum(tbl_NB_2)
+  recall_NB <- tbl_NB_2[1,1]/(tbl_NB_2[1,1] + tbl_NB_2[1,2]) # Sensitivity
+  F1_NB <- 2*tbl_NB_2[1,1]/(2*tbl_NB_2[1,1] + tbl_NB_2[2,1] + tbl_NB_2[1,2])
+}
+
+#5 K-najbližších susedov
+{
+  # resplit data
+  split2 <- sample(c(rep(0, round(0.8 * nrow(CO2), 0)), rep(1, round(0.2 * nrow(CO2), 0))))
+  co2_training <- CO2[split2 == 0, ]
+  co2_test <- CO2[split2 == 1, ]
+  
+  # separate only target attribute
+  co2_trainLabels <- as.vector(co2_training$Treatment)
+  co2_testLabels <- as.vector(co2_test$Treatment)
+  
+  # separate only prediction attributes
+  co2_training$Treatment <- NULL
+  co2_training$Type <- NULL
+  co2_training <- as.matrix(co2_training)
+  co2_test$Treatment <- NULL
+  co2_test$Type <- NULL
+  co2_test <- as.matrix(co2_test)
+  
+
+  library(class)
+  
+  # create K-nn model
+  co2_pred <- knn(co2_training, co2_test, cl = co2_trainLabels, k = 2)
+  
+  # Confusion Matrix
+  tbl_k <- table(co2_testLabels, co2_pred)
+  tbl_k
+
+  precision_k <- tbl_k[1,1]/(tbl_k[1,1] + tbl_k[2,1])
+  accuracy_k <- sum(diag(tbl_k)) / sum(tbl_k)
+  recall_k <- tbl_k[1,1]/(tbl_k[1,1] + tbl_k[1,2]) # Sensitivity
+  F1_k <- 2*tbl_k[1,1]/(2*tbl_k[1,1] + tbl_k[2,1] + tbl_k[1,2])
+}

@@ -1,0 +1,146 @@
+@import "../base/variables";
+.viibes{
+  &__seo{
+    &_countries{
+      background: $bg_gray;
+      padding: 3rem 0;
+      & .viibes__wrap{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 3rem;
+      }
+      &_item{
+        border-radius: 3rem;
+        background: $bg_white;
+        padding: 2rem;
+          div{
+              display: flex;
+              flex-direction: row;
+              gap: 10px;
+              align-items: center;
+              h3{
+                  a{
+                      color: $text_black;
+                      &:hover{
+                          text-decoration: underline;
+                      }
+                  }
+              }
+          }
+        & p{
+          font-style: normal;
+          font-weight: 400;
+          font-size: 1.625rem;
+          line-height: 144%;
+          margin: 0;
+          transition-duration: $transition_duration;
+            a{
+                color: $text_gray;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+        & img{
+          width: 5rem;
+          height: 5rem;
+        }
+      }
+    }
+    &_text_block{
+      background-color: $bg_gray;
+      padding-bottom: 3rem;
+        p, li{
+            font-size: 1.75rem;
+            font-weight: 400;
+            line-height: 144%;
+            color: $text_gray;
+            margin: 1rem 0;
+            //text-decoration: none;
+        }
+        h2,h3,h4,h5,h6{
+            margin-top: 2rem;
+            //font-size: 1.75rem;
+            //font-weight: 600;
+            //line-height: 144%;
+            //color: $text_gray;
+            //margin: 0;
+            //text-decoration: none;
+        }
+
+      &_content{
+        //background-color: $bg_white;
+        //padding: 3rem;
+        //border-radius: 3rem;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+          hr{
+              width: 100%;
+              height: 1px;
+              background: #dedede;
+              border: none;
+          }
+      }
+      &_tags{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        row-gap: .5rem;
+          p{
+              margin: 0 !important;
+          }
+      }
+      &_text{
+        max-height: 60rem;
+        overflow-y: scroll;
+          //padding: 2rem 0;
+          //border-top: 1px solid #dedede;
+          //border-bottom: 1px solid #dedede;
+        &::-webkit-scrollbar {
+          width: 0;
+        }
+      }
+    }
+  }
+}
+
+
+@media (min-width: 0) and (max-width: 767px){
+  .viibes{
+    &__seo{
+      &_countries{
+        .viibes__wrap{
+          gap: 2rem;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+        }
+        &_item{
+          width: 100%;
+          box-sizing: border-box;
+            div{
+                gap: 6px;
+            }
+            img{
+                width: 4rem;
+                height: 4rem;
+            }
+            h4{
+                font-size: 2.2rem;
+            }
+          & p{
+            font-size: 1.25rem;
+          }
+        }
+      }
+      &_text_block{
+          padding-bottom: 4rem;
+        &_tags{
+          gap: 1rem;
+        }
+      }
+    }
+  }
+}

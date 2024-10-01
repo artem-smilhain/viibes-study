@@ -1,0 +1,168 @@
+////////////////////////////////////////////////////////////////////////////////////////////////
+// OUR CONTAINER
+////////////////////////////////////////////////////////////////////////////////////////////////
+.viibes{
+    &__wrap{
+        width: 100%;
+        max-width: 161.5rem;
+        padding: 0 2rem;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+}
+////////////////////////////////////////////////////////////////////////////////////////////////
+// PAGE LAYOUT
+////////////////////////////////////////////////////////////////////////////////////////////////
+.viibes{
+    &__preview{
+        padding: 25rem 0 4rem 0;
+        a.viibes__h1_sub{
+            margin-top: 1rem;
+            color: $text_gray;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+        &_tags{
+            display: flex;
+            column-gap: 2rem;
+            row-gap: 2rem;
+            margin-top: 4rem;
+            flex-wrap: wrap;
+            text-transform: lowercase;
+            max-height: inherit;
+            &_tag{
+                display: block;
+                padding: 1rem 1.75rem 1rem 1.5rem;
+                background: rgba(93, 96, 109, 0.1);
+                border-radius: 1rem;
+                font-size: 2rem;
+                font-weight: 600;
+                color: $text_gray;
+                transition-duration: $transition_duration;
+                &:hover{
+                    background: rgba(93, 96, 109, 0.2);
+                }
+                &_main{
+                    background: rgba(162, 100, 241, 0.1);
+                    color: $text_purple;
+                    &:hover{
+                        background: rgba(162, 100, 241, 0.2);
+                    }
+                }
+                &_active{
+                    background: rgba(93, 96, 109, 1);
+                    color: $text_white;
+                    pointer-events: none;
+                }
+            }
+            #tags__blur_block{
+                display: none;
+                #tags__blur_block_arrow{
+                    display: none;
+                }
+            }
+        }
+    }
+    &__main{
+        padding-bottom: 9rem;
+        &_list_block{
+            display: grid;
+            grid-template-columns: 9fr 2.5fr;
+            grid-column-gap: 3rem;
+            &_list{
+                display: flex;
+                flex-direction: column;
+                gap: 3rem;
+            }
+        }
+    }
+}
+@media (min-width: 768px) and (max-width: 991px){
+    .viibes{
+        &__preview{
+            padding-top: 25rem;
+        }
+        &__main{
+            &_list_block{
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+}
+@media (min-width: 0) and (max-width: 767px){
+    .viibes{
+        &__preview{
+            padding-top: 18rem;
+            padding-bottom: 3rem;
+            &_tags{
+                &_tag{
+                    font-size: 1.75rem;
+                }
+                max-height: 156px;
+                overflow: hidden;
+                position: relative;
+                margin-top: 3rem;
+                &_open{
+                    max-height: inherit !important;
+                    padding-bottom: 32px;
+                }
+                #tags__blur_block{
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                    height: 64px;
+                    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.807672) 41.67%, rgba(255, 255, 255, 0.776707) 51.56%, rgba(255, 255, 255, 0.848958) 73.44%, #FFFFFF 100%);
+                    #tags__blur_block_arrow{
+                        display: block;
+                        position: absolute;
+                        bottom: 0;
+                        left: 50%;
+                        transform: translateX(-50%);
+                    }
+                    .tags__blur_block_arrow_open{
+                        transform: scale(1, -1) translateX(-50%) !important;
+                    }
+                }
+                .tags__blur_block_open{
+                    background: none !important;
+                }
+            }
+        }
+        &__main{
+            padding-bottom: 7rem;
+            &_list_block{
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+}
+////////////////////////////////////////////////////////////////////////////////////////////////
+// BREADCRUMBS
+////////////////////////////////////////////////////////////////////////////////////////////////
+.viibes{
+    &__breadcrumbs{
+        &_items{
+            margin-top: 3rem;
+            display: inline-flex;
+            flex-wrap: wrap;
+            row-gap: 1rem;
+            &_item{
+                display: inline-flex;
+                align-items: center;
+                a{
+                    margin-right: 1rem;
+                    b{
+                        font-weight: 600;
+                    }
+                }
+                div{
+                    margin-right: 1rem;
+                }
+            }
+        }
+    }
+}

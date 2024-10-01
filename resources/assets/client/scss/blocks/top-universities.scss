@@ -1,0 +1,205 @@
+@import "../base/variables";
+
+.viibes{
+  &__top_universities{
+    padding: 14rem 0;
+    overflow-x: hidden;
+    .viibes__h2{
+        margin-bottom: 1.25rem;
+    }
+    .swiper-horizontal{
+      //width: 66vw;
+    }
+    &_underside{
+      margin-top: 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &_buttons{
+        display: flex;
+        gap: 4rem;
+        &_button{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 7rem;
+          height: 7rem;
+          background: #F4F5F6;
+          cursor: pointer;
+          border-radius: 100%;
+          transition-duration: $transition_duration;
+          &:hover{
+            filter: brightness(.9);
+          }
+          &:first-of-type{
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+  }
+  &__slide{
+    &_list{
+      display: flex;
+      gap: 3rem;
+      margin-top: 8rem;
+      overflow-x: scroll;
+      width: 100vw;
+      box-sizing: border-box;
+      &::-webkit-scrollbar {
+        width: 0;
+      }
+    }
+    &_item{
+      width: 50.5rem;
+      height: 50.5rem;
+      border-radius: 3rem;
+      background-position: center;
+      flex-shrink: 0;
+      background-size: cover;
+      display: flex;
+      align-items: flex-end;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+        isolation: isolate;
+      &:hover &_background{
+        transform: scale(1.1);
+      }
+      &_background{
+        transition-duration: $transition_duration;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        object-position: center;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+          object-fit: cover;
+      }
+      &_inner{
+        width: 100%;
+        border-radius: 3rem;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.357292) 29.69%, rgba(0, 0, 0, 0.7) 100%);
+        padding: 3rem 3rem 2rem 3rem;
+        & hr{
+          margin: 2rem 0 1rem 0;
+          height: 1px;
+            background: rgba(255, 255, 255, 0.50);
+            border: 0;
+        }
+      }
+      &_header{
+        gap: 2rem;
+        display: flex;
+        align-items: center;
+        &_image{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: 2px solid $bg_white;
+          border-radius: 100%;
+          width: 7rem;
+          height: 7rem;
+          box-sizing: border-box;
+          flex-shrink: 0;
+          &_circle{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 5.75rem;
+            height: 5.75rem;
+            border-radius: 100%;
+            background-color: $bg_white;
+            & img{
+              width: 4rem;
+              height: 4rem;
+            }
+          }
+
+        }
+        & .viibes__h6{
+          color: $text_white;
+            font-weight: 500;
+        }
+      }
+      &_price{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        & span{
+          color: $text_white;
+        }
+      }
+    }
+  }
+}
+
+
+@media (min-width: 768px) and (max-width: 991px){
+  .viibes{
+    &__top_universities{
+      .swiper-horizontal{
+        width: 100vw;
+      }
+    }
+  }
+}
+
+@media (min-width: 0) and (max-width: 767px){
+  .viibes{
+    &__slide{
+      &_list{
+        margin-top: 4rem;
+        padding-right: 10rem;
+      }
+      &_item{
+        width: 37.5rem;
+        height: 42.875rem !important;
+          &_inner{
+              padding: 0 2.5rem 1.3rem 2.5rem;
+              hr{
+                  margin: 1.5rem 0 1rem 0;
+              }
+          }
+        &_price{
+          & span{
+            font-size: 1.75rem;
+          }
+        }
+        &_header{
+          gap: 1rem;
+          .viibes__h6{
+            font-size: 1.75rem;
+          }
+          &_image{
+            width: 6rem;
+            height: 6rem;
+            &_circle{
+              width: 4.75rem;
+              height: 4.75rem;
+              & img{
+                height: 2.75rem;
+                width: 2.75rem;
+              }
+            }
+          }
+        }
+      }
+    }
+    &__top_universities{
+      padding: 11rem 0;
+      .swiper-horizontal{
+        width: 77vw;
+      }
+      &_underside{
+          margin-top: 4rem;
+        &_buttons{
+          display: none;
+        }
+      }
+    }
+  }
+}

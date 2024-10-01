@@ -1,0 +1,559 @@
+@import "../base/variables";
+
+.viibes{
+  &__university{
+    &_main{
+      //padding-bottom: 5rem;
+      &_mobile_sidebar{
+        display: none;
+      }
+      & .viibes__wrap{
+        display: grid;
+        grid-template-columns: 2.1fr 3fr;
+        grid-column-gap: 3rem;
+      }
+      &_content{
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        &_properties{
+          margin-top: 2rem;
+          ul{
+              margin: 0;
+              padding: 0;
+              list-style-type: none;
+              li{
+                  margin-bottom: 1rem;
+                  &:last-child{
+                      margin-bottom: 0 !important;
+                  }
+              }
+          }
+          & a{
+            color: unset;
+            transition-duration: $transition_duration;
+            &:hover{
+              text-decoration: underline;
+            }
+          }
+        }
+        &_description{
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+        }
+        &_faculty{
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+          &_item{
+            &_hidden{
+              &_specialties{
+                margin-top: 2rem;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 2rem;
+                &_list{
+                  display: flex;
+                  flex-direction: column;
+                  gap: 1rem;
+                  width: calc((100% - 2rem) / 2);
+                    ul{
+                        margin: 0;
+                        padding: 0;
+                        list-style-type: none;
+                        li{
+                            margin-bottom: 1rem;
+                            h6{
+                                margin: 0;
+                                span{
+                                    font-weight: 400 !important;
+                                }
+                            }
+                        }
+                        li:last-child{
+                            margin-bottom: 0;
+                        }
+                    }
+                    h5{
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                    }
+                  &_item{
+                    display: flex;
+                    gap: 1rem;
+                      text-decoration-color: $text_purple !important;
+                      &:hover{
+                          span{
+                              text-decoration: underline;
+                          }
+                      }
+                    & span{
+                      font-size: 2rem;
+                      line-height: 144%;
+                      &:first-child{
+                        font-weight: 600;
+                      }
+                    }
+                  }
+                }
+              }
+              & .viibes__btn_link{
+                margin-top: 2rem;
+                font-size: 2.25rem;
+                & img{
+                  width: 3.375rem;
+                  height: 3.375rem;
+                }
+              }
+            }
+          }
+        }
+      }
+      &_sidebar{
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        &_image{
+          width: 100%;
+          height: 63.875rem;
+          position: relative;
+          border-radius: 3rem;
+          overflow: hidden;
+            filter: saturate(1.35);
+            isolation: isolate;
+          & img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+          &_logo{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: 1;
+            width: 9rem;
+            height: 9rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 3rem 0;
+            & path{
+              fill: $bg_white;
+            }
+          }
+        }
+          &_nav{
+              width: calc(100% - 6rem);
+              background: $bg_gray;
+              height: auto;
+              border-radius: 3rem;
+              padding: 3rem;
+              ul{
+                  list-style-type: none;
+                  padding: 2rem 0 0 0;
+                  margin: 0;
+                  li{
+                      margin-top: 1.25rem;
+                      &:first-child{
+                          margin-top: 0 !important;
+                      }
+                      a{
+                          color: $text_black;
+                          &:hover{
+                              text-decoration: underline;
+                          }
+                      }
+                  }
+              }
+          }
+      }
+    }
+    &_photos{
+        &_inner{
+            border-top: 1px solid #F4F5F6;
+            padding-top: 4rem;
+            margin-top: 5rem;
+        }
+      &_list{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 3rem;
+        margin-top: 3rem;
+        &_photo{
+          height: 37.125rem;
+          display: block;
+          overflow: hidden;
+            isolation: isolate;
+          border-radius: 3rem;
+          position: relative;
+          &:hover &_inner{
+            transform: scale(1.1);
+          }
+          &_inner{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition-duration: $transition_duration;
+          }
+          &_zoom{
+            background: rgba(0, 0, 0, 0.2);
+            position: absolute;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 100%;
+            & img{
+              width: 2rem;
+              height: 2rem;
+            }
+          }
+        }
+      }
+    }
+      &_city_post{
+          &_inner{
+              border-top: 1px solid #F4F5F6;
+              padding-top: 4rem;
+              margin-top: 5rem;
+              display: flex;
+              img{
+                  max-width: 404px;
+                  border-radius: 3rem;
+                  object-fit: cover;
+                  width: 32%;
+              }
+          }
+          .viibes__universities_city_post_inner_text{
+              block-size: fit-content;
+              padding-left: 3rem;
+              div{
+                  margin-bottom: 3rem;
+                  h2{
+                      margin-bottom: 1rem;
+                  }
+              }
+          }
+      }
+      &_location{
+          &_inner{
+              border-top: 1px solid #F4F5F6;
+              padding-top: 4rem;
+              margin-top: 5rem;
+              iframe{
+                  width: 100%;
+                  height: 50rem;
+                  border: none;
+                  border-radius: 3rem;
+                  margin-top: 3rem;
+              }
+              p{
+                  margin-top: 2rem;
+              }
+          }
+      }
+      &_additional_text{
+          &_inner{
+              border-top: 1px solid #F4F5F6;
+              padding-top: 4rem;
+              margin-top: 5rem;
+              p{
+                  margin-top: 3rem;
+              }
+              h3{
+                  margin-top: 4rem;
+                  margin-bottom: -1rem;
+                  @media (min-width: 0) and (max-width: 767px){
+                      margin-top: 3rem;
+                  }
+              }
+              h4{
+                  margin-top: 3rem;
+                  margin-bottom: 0;
+              }
+              ol{
+                  li{
+                      margin-bottom: 0.5rem;
+                  }
+              }
+          }
+      }
+    &_another{
+      overflow: hidden;
+        isolation: isolate;
+      padding: 14rem 0;
+      &_list{
+        display: flex;
+        //gap: 3rem;
+        margin-top: 8rem;
+        box-sizing: border-box;
+      }
+      &_item{
+        width: 50.5rem;
+        height: 50.5rem;
+        border-radius: 3rem;
+        background-position: center;
+        flex-shrink: 0;
+        background-size: cover;
+        display: flex;
+        align-items: flex-end;
+        text-decoration: none;
+        position: relative;
+        overflow: hidden;
+          isolation: isolate;
+        &_background{
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          object-position: center;
+          width: 100%;
+          height: 100%;
+          z-index: -1;
+        }
+        &_inner{
+          border-radius: 3rem;
+          background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.357292) 29.69%, rgba(0, 0, 0, 0.7) 100%);
+          padding: 3rem 3rem 2rem 3rem;
+          & hr{
+            margin: 2rem 0 1rem 0;
+            height: 1px;
+            background: $bg_white;
+            border: 0;
+          }
+        }
+        &_header{
+          gap: 2rem;
+          display: flex;
+          align-items: center;
+          &_image{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid $bg_white;
+            border-radius: 100%;
+            width: 7rem;
+            height: 7rem;
+            box-sizing: border-box;
+            flex-shrink: 0;
+            &_circle{
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 5.75rem;
+              height: 5.75rem;
+              border-radius: 100%;
+              background-color: $bg_white;
+              & img{
+                width: 3.25rem;
+                height: 3.25rem;
+              }
+            }
+          }
+          & h6{
+            color: $text_white;
+          }
+        }
+        &_price{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          & span{
+            color: $text_white;
+          }
+        }
+      }
+    }
+  }
+}
+.university_a_navigation{
+    content: '';
+    display: block;
+    height:  75px;
+    margin-top: -75px;
+    visibility: hidden;
+}
+@media (min-width: 0) and (max-width: 991px){
+    .viibes__university_city_post{
+        .viibes__university_city_post_inner{
+            flex-direction: column;
+            .viibes__university_city_post_inner_img{
+                width: 100% !important;
+                max-width: none;
+            }
+            h2{
+                margin-bottom: 3rem;
+            }
+        }
+        .viibes__universities_city_post_inner_text{
+            padding-left: 0;
+            margin-top: 2rem;
+            a{
+                //font-size: 2rem;
+                img{
+                    //width: 3rem;
+                    //height: 3rem;
+                }
+            }
+        }
+    }
+}
+@media (min-width: 0) and (max-width: 767px){
+    .viibes__university__content_sidebar_hide{
+        .viibes__universities_text_main_sidebar{
+            display: none;
+        }
+    }
+    .viibes__university__content_sidebar_hide{
+        .viibes__universities_text_main_content{
+            padding-bottom: 0;
+        }
+    }
+    .viibes__university_location{
+        iframe{
+            height: 45rem !important;
+        }
+    }
+    .viibes__university_city_post_inner_img{
+        height: 248px;
+    }
+    .viibes__university_admission{
+        .viibes__university_admission_inner{
+            p{
+                margin-top: 2rem !important;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+
+  .viibes{
+    &__university{
+      &  #university_slider{
+        width: 95%;
+      }
+      &_main{
+        &_mobile_sidebar{
+          display: block;
+        }
+        & .viibes__wrap{
+          display: flex;
+          flex-direction: column;
+          gap: 3rem;
+        }
+        &_sidebar{
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-column-gap: 2rem;
+          &_image{
+            height: 50rem;
+          }
+          & .viibes__sidebar_university{
+            display: none;
+          }
+        }
+      }
+      &_photos{
+        &_list{
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      &_another{
+
+        &_list{
+          //flex-wrap: wrap;
+          //gap: 2rem;
+        }
+        &_item{
+          width: calc((100% - 2rem) / 2);
+        }
+      }
+    }
+  }
+}
+
+
+@media (min-width: 0) and (max-width: 767px){
+  .viibes{
+    &__university{
+      &  #university_slider{
+        width: 95%;
+      }
+      &_main{
+        //padding-bottom: 4.5rem;
+        &_mobile_sidebar{
+          display: block;
+        }
+        & .viibes__wrap{
+          display: flex;
+          flex-direction: column;
+          gap: 3rem;
+        }
+        &_sidebar{
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+          &_image{
+            height: 42.875rem;
+          }
+          & iframe{
+            height: 42.875rem;
+          }
+          & .viibes__sidebar_university{
+            display: none;
+          }
+        }
+        &_content{
+          &_faculty{
+            &_item{
+              padding: 2rem;
+              &_hidden{
+                  .faculty_description{
+                      font-size: 1.6rem !important;
+                  }
+                &_specialties{
+                  &_list{
+                    width: 100%;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      &_photos{
+        //padding: 0;
+        &_list{
+          grid-template-columns: 1fr 1fr;
+          gap: 2rem;
+          margin-top: 3rem;
+          &_photo{
+            height: 20.4375rem;
+            border-radius: 2rem;
+
+          }
+        }
+      }
+      &_another{
+        padding: 11rem 0;
+
+        &_list{
+          margin-top: 3rem;
+          //flex-wrap: wrap;
+          //gap: 2rem;
+        }
+        &_item{
+          //width: calc((100% - 2rem) / 2);
+        }
+      }
+    }
+  }
+}

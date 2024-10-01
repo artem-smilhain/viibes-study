@@ -1,0 +1,76 @@
+#библиотеки
+install.packages("dplyr") 
+library(dplyr)
+#
+#install.packages("corrplot")
+#library("corrplot")
+#
+#install.packages("ggplot2")
+#library(ggplot2)
+#
+#install.packages("GGally")
+#library(GGally)
+#
+#install.packages('tidyr')
+#library("tidyr")
+
+
+#скачмваем файл
+file_path = "/home/jovyan/work/assignment/DATA/elnino.txt"
+elnino = read.table(file_path)
+#getwd() /получаем путь к файлу
+
+#добавить названия атрибутам
+colnames(elnino)[0] = "id" 
+colnames(elnino)[1] = "date" #дата
+colnames(elnino)[2] = "latitude" #широта
+colnames(elnino)[3] = "longitude" #долгота
+colnames(elnino)[4] = "zonal_winds" #зональные ветры #(west<0, east>0) 
+colnames(elnino)[5] = "meridional_winds" #меридиональные ветры #(south<0, north>0)
+colnames(elnino)[6] = "relative_humidity" #относительная влажность
+colnames(elnino)[7] = "air_temperature" #температура воздуха
+colnames(elnino)[8] = "sea_surface_temperature" #температура поверхности моря
+colnames(elnino)[9] = "subsurface_temperatures" #подземные температуры
+
+summary(elnino)
+
+elnino[elnino == "."] = NA
+elnino[elnino == ". "] = NA
+
+elnino$date = as.integer(elnino$date)
+elnino$latitude = as.integer(elnino$latitude)
+elnino$longitude = as.double(elnino$longitude)
+elnino$zonal_winds = as.double(elnino$zonal_winds)
+elnino$meridional_winds = as.double(elnino$meridional_winds)
+elnino$relative_humidity = as.double(elnino$relative_humidity)
+elnino$air_temperature = as.double(elnino$air_temperature)
+elnino$sea_surface_temperature = as.double(elnino$sea_surface_temperature)
+elnino$subsurface_temperatures = as.double(elnino$subsurface_temperatures)
+
+#вывод данных
+head(elnino, 10) 
+
+colSums(is.na(elnino)) #выписать количество пустых строк
+
+counts <- table(elnino$date)
+barplot(counts, col = "pink", main="Početnosť záznamov pre jednotlivé dni", xlab="Days", ylab="Recordings")
+
+boxplot(elnino$air_temperature, col = "blue")
+
+hist(elnino$sea_surface_temperature, col = "pink") 
+
+elnino_2 = elnino #копируем данные в новый data frame
+
+
+elnino[elnino$zonal_winds == NA] = mean(elnino[elnino$zonal_winds])
+elnino_2$zonal_winds[is.na(elnino_2$zonal_winds)] <- mean(elnino_2$zonal_winds)
+elnino_2$zonal_winds[is.na(elnino_2$zonal_winds)] = mean(elnino_2$zonal_winds, na.rm = TRUE)
+elnino_2$meridional_winds[is.na(elnino_2$meridional_winds)] = mean(elnino_2$meridional_winds, na.rm = TRUE)
+elnino_2$relative_humidity[is.na(elnino_2$relative_humidity)] = median(elnino_2$relative_humidity, na.rm = TRUE)
+elnino_2$air_temperature[is.na(elnino_2$air_temperature)] = median(elnino_2$air_temperature, na.rm = TRUE)
+elnino_2 = subset(elnino_2, select = -c(seasurface))
+summary(elnino_2)
+
+
+elnino_1 = elnino
+elnino_1 = drop_na(elnino_1) #удалить строки с пустыми значениями

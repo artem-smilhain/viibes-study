@@ -1,0 +1,307 @@
+@import "variables";
+
+//Manrope all includes
+@font-face {
+    font-family: 'Manrope';
+    src: url('/assets/client/fonts/Manrope/static/otf/Manrope-ExtraLight.otf');
+    src: local('Manrope-ExtraLight'),
+    url('/assets/client/fonts/Manrope/static/ttf/Manrope-ExtraLight.ttf') format('ttf'),
+    url('/assets/client/fonts/Manrope/static/webfonts/Manrope-ExtraLight.woff2') format('woff2');
+
+    font-weight: 200;
+}
+@font-face {
+    font-family: 'Manrope';
+    src: url('/assets/client/fonts/Manrope/static/otf/Manrope-Light.otf');
+    src: local('Manrope-Light'),
+    url('/assets/client/fonts/Manrope/static/ttf/Manrope-Light.ttf') format('ttf'),
+    url('/assets/client/fonts/Manrope/static/webfonts/Manrope-Light.woff2') format('woff2');
+
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'Manrope';
+    src: url('/assets/client/fonts/Manrope/static/otf/Manrope-Regular.otf');
+    src: local('Manrope-Regular'),
+    url('/assets/client/fonts/Manrope/static/ttf/Manrope-Regular.ttf') format('ttf'),
+    url('/assets/client/fonts/Manrope/static/webfonts/Manrope-Regular.woff2') format('woff2');
+
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Manrope';
+    src: url('/assets/client/fonts/Manrope/static/otf/Manrope-Medium.otf');
+    src: local('Manrope-Medium'),
+    url('/assets/client/fonts/Manrope/static/ttf/Manrope-Medium.ttf') format('ttf'),
+    url('/assets/client/fonts/Manrope/static/webfonts/Manrope-Medium.woff2') format('woff2');
+
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'Manrope';
+    src: url('/assets/client/fonts/Manrope/static/otf/Manrope-SemiBold.otf');
+    src: local('Manrope-SemiBold'),
+    url('/assets/client/fonts/Manrope/static/ttf/Manrope-SemiBold.ttf') format('ttf'),
+    url('/assets/client/fonts/Manrope/static/webfonts/Manrope-SemiBold.woff2') format('woff2');
+
+    font-weight: 600;
+}
+@font-face {
+    font-family: 'Manrope';
+    src: url('/assets/client/fonts/Manrope/static/otf/Manrope-Bold.otf');
+    src: local('Manrope-Bold'),
+    url('/assets/client/fonts/Manrope/static/ttf/Manrope-Bold.ttf') format('ttf'),
+    url('/assets/client/fonts/Manrope/static/webfonts/Manrope-Bold.woff2') format('woff2');
+
+    font-weight: 700;
+}
+@font-face {
+    font-family: 'Manrope';
+    src: url('/assets/client/fonts/Manrope/static/otf/Manrope-ExtraBold.otf');
+    src: local('Manrope-ExtraBold'),
+    url('/assets/client/fonts/Manrope/static/ttf/Manrope-ExtraBold.ttf') format('ttf'),
+    url('/assets/client/fonts/Manrope/static/webfonts/Manrope-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+}
+
+html{
+    font-size: 8px;
+    font-family: Manrope, sans-serif;
+    font-style: normal;
+}
+.viibes{
+    &__h1{
+        font-size: 8rem;
+        font-weight: 700;
+        line-height: 120%;
+        color: $text_black;
+        margin: 0;
+        text-decoration: none;
+    }
+    &__h2{
+        font-size: 5rem;
+        font-weight: 700;
+        line-height: 144%;
+        color: $text_black;
+        margin: 0;
+        text-decoration: none;
+    }
+    &__h3{
+        font-size: 4rem;
+        font-weight: 600;
+        line-height: 144%;
+        color: $text_black;
+        margin: 0;
+        text-decoration: none;
+    }
+    &__h4{
+        font-size: 2.75rem;
+        font-weight: 500;
+        line-height: 144%;
+        color: $text_black;
+        margin: 0;
+        text-decoration: none;
+    }
+    &__h5{
+        font-size: 2.5rem;
+        font-weight: 500;
+        line-height: 144%;
+        color: $text_black;
+        margin: 0;
+        text-decoration: none;
+    }
+    &__h6{
+        font-size: 2.25rem;
+        font-weight: 400;
+        line-height: 144%;
+        color: $text_black;
+        margin: 0;
+        text-decoration: none;
+    }
+    &__h1_sub{
+        font-size: 3rem;
+        font-weight: 500;
+        line-height: 144%;
+        color: $text_gray;
+        margin: 0;
+        text-decoration: none;
+    }
+    &__h2_sub{
+        font-size: 2.5rem;
+        font-weight: 500;
+        line-height: 144%;
+        color: $text_gray;
+        margin: 0;
+        text-decoration: none;
+    }
+    &__text_big{
+        font-size: 2.5rem;
+        font-weight: 500;
+        line-height: 144%;
+        color: $text_gray;
+        margin: 0;
+        text-decoration: none;
+    }
+    &__text_medium{
+        font-size: 2.25rem;
+        font-weight: 500;
+        line-height: 144%;
+        color: $text_gray;
+        margin: 0;
+        text-decoration: none;
+    }
+    &__text_normal{
+        font-size: 2rem;
+        font-weight: 400;
+        line-height: 144%;
+        color: $text_gray;
+        margin: 0;
+        text-decoration: none;
+    }
+    &__text_small{
+        font-size: 1.75rem;
+        font-weight: 400;
+        line-height: 144%;
+        color: $text_gray;
+        margin: 0;
+        text-decoration: none;
+    }
+    /*&__seo_h{
+        font-size: 1.75rem;
+        font-weight: 600;
+        line-height: 144%;
+        color: $text_gray;
+        margin: 0;
+        text-decoration: none;
+    }
+    &__seo_text{
+        font-size: 1.75rem;
+        font-weight: 400;
+        line-height: 144%;
+        color: $text_gray;
+        margin: 0;
+        text-decoration: none;
+    }*/
+    &__seo_keyword{
+        font-size: 1.75rem;
+        font-weight: 400;
+        line-height: 144%;
+        color: $text_gray;
+        margin: 0;
+        text-decoration: none;
+    }
+    &__shadow_text{
+        text-shadow: 0 0 32px rgba(0, 0, 0, 0.5);
+    }
+    &__weight_regular{
+        font-weight: 400;
+    }
+    &__weight_medium{
+        font-weight: 500;
+    }
+    &__weight_semibold{
+        font-weight: 600;
+    }
+    &__weight_bold{
+        font-weight: 700;
+    }
+    &__weight_extrabold{
+        font-weight: 800;
+    }
+}
+
+@media (min-width: 0px) and (max-width: 767px){
+    .viibes{
+        &__h1{
+            font-size: 5rem;
+            font-weight: 700;
+            line-height: 120%;
+            color: $text_black;
+        }
+        &__h2{
+            font-size: 3.25rem;
+            font-weight: 700;
+            line-height: 144%;
+            color: $text_black;
+        }
+        &__h3{
+            font-size: 3rem;
+            font-weight: 600;
+            line-height: 144%;
+            color: $text_black;
+        }
+        &__h4{
+            font-size: 2.5rem;
+            font-weight: 500;
+            line-height: 144%;
+            color: $text_black;
+        }
+        &__h5{
+            font-size: 2rem;
+            font-weight: 500;
+            line-height: 144%;
+            color: $text_black;
+        }
+        &__h6{
+            font-size: 2rem;
+            font-weight: 400;
+            line-height: 144%;
+            color: $text_black;
+        }
+        &__h1_sub{
+            font-size: 2.125rem;
+            font-weight: 500;
+            line-height: 144%;
+            color: $text_gray;
+        }
+        &__h2_sub{
+            font-size: 2rem;
+            font-weight: 500;
+            line-height: 144%;
+            color: $text_gray;
+        }
+        &__text_big{
+            font-size: 2rem;
+            font-weight: 500;
+            line-height: 144%;
+            color: $text_gray;
+        }
+        &__text_medium{
+            font-size: 2rem;
+            font-weight: 500;
+            line-height: 144%;
+            color: $text_gray;
+        }
+        &__text_normal{
+            font-size: 2rem;
+            font-weight: 400;
+            line-height: 144%;
+            color: $text_gray;
+        }
+        &__text_small{
+            font-size: 1.75rem;
+            font-weight: 400;
+            line-height: 144%;
+            color: $text_gray;
+        }
+        &__seo_h{
+            font-size: 1.5rem;
+            font-weight: 600;
+            line-height: 144%;
+            color: $text_gray;
+        }
+        &__seo_text{
+            font-size: 1.5rem;
+            font-weight: 400;
+            line-height: 144%;
+            color: $text_gray;
+        }
+        &__seo_keyword{
+            font-size: 1.5rem;
+            font-weight: 400;
+            line-height: 144%;
+            color: $text_gray;
+        }
+    }
+}

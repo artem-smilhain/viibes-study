@@ -1,0 +1,243 @@
+@import "../base/variables";
+
+.viibes{
+  &__footer{
+    padding: 7rem 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3rem;
+
+    &_topside{
+      width: 100%;
+      & .viibes__wrap{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+      }
+      & .viibes__footer_column:nth-of-type(1){
+        .viibes__footer_head{
+          & p{
+            color: #00123C;
+            font-weight: 600;
+            white-space: nowrap;
+            text-transform: none !important;
+          }
+        }
+      }
+
+    }
+    &_list{
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      & a{
+        font-weight: 500;
+        font-size: 2rem;
+        line-height: 144%;
+        color: $text_black;
+        text-decoration: none;
+        transition-duration: $transition_duration;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+    &_head{
+      display: flex;
+      gap: 2rem;
+      height: 6rem;
+      align-items: center;
+      text-transform: uppercase;
+      & p{
+        font-weight: 700;
+        font-size: 2.625rem;
+        line-height: 115%;
+        letter-spacing: 0.05em;
+        color: $text_gray;
+        margin: 0;
+      }
+      & img{
+        height: 100%;
+      }
+    }
+    &_column{
+      gap: 3rem;
+      display: flex;
+      flex-direction: column;
+    }
+    & .viibes__h3{
+      font-size: 2.75rem;
+      font-weight: 500;
+    }
+    & .viibes__telegram_circle, .viibes__whatsapp_circle, .viibes__viber_circle, .viibes__instagram_circle, .viibes__facebook_circle{
+      width: 6rem;
+      height: 6rem;
+      & img{
+        width: 3.75rem;
+        height: 3.75rem;
+      }
+    }
+    & .viibes__contacts_list{
+      margin-top: 0;
+    }
+    & .viibes__contacts_row:last-of-type{
+      margin-top: 3rem;
+    }
+    &_middle{
+      margin-top: 1rem;
+      background-color: $bg_gray;
+      width: 100%;
+      padding: 2rem 0;
+      & .viibes__wrap{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      &_list{
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        &_circle{
+          width: 6px;
+          height: 6px;
+          background: #E3E3E3;
+          border-radius: 3px;
+        }
+        & a:hover{
+          text-decoration: underline;
+        }
+      }
+      & .viibes__color_purple{
+        transition-duration: $transition_duration;
+        &:hover{
+          filter: brightness(1.2);
+        }
+      }
+    }
+    &_underside{
+      width: 100%;
+      padding-bottom: 3rem;
+      & .viibes__wrap{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+      }
+      &_nav{
+        display: flex;
+        gap: 3rem;
+          div{
+              text-align: right;
+          }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+  .viibes {
+    &__footer {
+      &_column:last-of-type{
+        display: none;
+      }
+      &_column:nth-of-type(2){
+        .viibes__footer_head{
+          & p{
+            font-size: 2.25rem;
+          }
+        }
+      }
+      &_topside{
+        & .viibes__wrap{
+          justify-content: unset;
+          gap: 3rem;
+        }
+      }
+      &_middle{
+        &_list{
+          flex-wrap: wrap;
+
+        }
+        .viibes__wrap{
+          flex-wrap: wrap;
+          gap: 2rem;
+        }
+      }
+      &_underside{
+        & .viibes__wrap{
+          flex-direction: column;
+          align-items: unset;
+          gap: 2rem;
+        }
+        &_nav{
+          order: -1;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 0) and (max-width: 767px){
+  .viibes {
+    &__footer {
+      &_head{
+        height: 5.25rem;
+        & p{
+          font-size: 2.25rem;
+        }
+
+      }
+      &_column{
+        width: 50%;
+      }
+      &_column:last-of-type{
+        display: none;
+      }
+      &_column:nth-of-type(2){
+        .viibes__footer_head{
+          & p{
+            display: none;
+          }
+        }
+      }
+      &_topside{
+        & .viibes__wrap{
+          justify-content: unset;
+        }
+      }
+      &_middle{
+        &_list{
+          flex-wrap: wrap;
+
+        }
+        .viibes__wrap{
+          flex-wrap: wrap;
+          gap: 2rem;
+        }
+      }
+      &_underside{
+        & .viibes__wrap{
+          flex-direction: column;
+          align-items: unset;
+          gap: 2rem;
+        }
+        &_nav{
+          order: -1;
+          flex-wrap: wrap;
+          gap: 1rem;
+            div{
+                text-align: left;
+            }
+          & a{
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}

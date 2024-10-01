@@ -1,0 +1,101 @@
+.viibes {
+    &__contacts-page {
+        .viibes__header {
+            & path {
+                fill: $text_purple;
+            }
+
+            &_list {
+                & a {
+                    color: $text_gray;
+                }
+            }
+        }
+
+        &_main{
+            padding: 25rem 0 9rem 0;
+            &_content{
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-column-gap: 3rem;
+                margin-top: 4rem;
+                &_item{
+                    padding: 3rem;
+                    border-radius: 3rem;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 4.25rem;
+                    justify-content: space-between;
+                    overflow: hidden;
+                    isolation: isolate;
+                    position: relative;
+                    &_topside{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 2rem;
+                        position: relative;
+                        z-index: 1;
+                    }
+                    &_image{
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                        width: 47%;
+                    }
+                    &:nth-of-type(3){
+                        & p{
+                            max-width: 59%;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+    .viibes{
+        &__contacts-page{
+            &_main{
+                padding-top: 25rem;
+                &_content{
+                    column-gap: unset;
+                    gap: 2rem;
+                    grid-template-columns: 1fr 1fr;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 0) and (max-width: 767px){
+    .viibes{
+        &__contacts-page{
+            &_main{
+                padding: 18rem 0 7rem 0;
+                &_content{
+                    column-gap: unset;
+                    gap: 2rem;
+                    grid-template-columns: 1fr;
+                    margin-top: 4rem;
+                    &_item{
+                        padding: 3rem 2rem;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: unset;
+                        gap: 2rem;
+                        &_image{
+                            width: unset;
+                            max-height: 80%;
+                            max-width: 45%;
+                        }
+                        &_topside{
+                            gap: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

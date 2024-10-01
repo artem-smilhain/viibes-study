@@ -1,0 +1,23 @@
+id,name,name_sk,abbreviation,abbreviation_sk,description,founding_year,address,address_sk,site_url,number_of_students,logo_src,thumbnail_src,google_map_src,education_cost_en,scholarships,row_weight,slug,city_id,created_at,updated_at
+8,Технический университет в Кошице,Technická univerzita v Košiciach,ТУКЕ,TUKE,,1952,"Летна 9, 042 00 Кошице","Letná 9, 042 00 Košice",www.tuke.sk/wps/portal/tuke,8 000,,,,2000-5000,300-2500,1,,1,,
+6,Словацкий технический университет в Братиславе,Slovenská technická univerzita v Bratislave,СТУ,STU,,1937,"Вазовова 5, 812 43, Братислава","Vazovova 5, 812 43, Bratislava",www.stuba.sk/,12 000,,,,2000-5000,150-2500,2,,2,,
+15,Университет Павла Йозефа Шафарика в Кошице,Univerzita Pavla Jozefa Šafárika v Košiciach,УПЙШ,UPJŠ,,1959,"Шробарова 2, 041 80 Кошице","Šrobárova 2, 041 80 Košice",www.upjs.sk/ua/historia/upjs-v-kosiciach/,6 000,,,,2000-5000,150-2000,3,,1,,
+14,Университет Матея Бела в Банска-Бистрице,Univerzita Mateja Bela v Banskej Bystrici,УМБ,UMB,,1992,Народна 12 974 01 Банска Быстрица,Národná 12 974 01 Banská Bystrica,"www.umb.sk/
+",15000,,,,2000-5000,150-1400,4,,3,,
+2,Экономический университет в Братиславе,Ekonomická univerzita v Bratislave,ЭУБА,EUBA,,1940,Шробарова 2 041 80 Кошице,Šrobárova 2 041 80 Košice,"www.euba.sk
+",10000,,,,2000-5000,200-2000,5,,2,,
+20,Жилинский университет в Жилине,Žilinská univerzita v Žiline,УНИЗА,UNIZA,,1953,Университетна 8215/1 010 26 Жилина,Univerzitná 8215/1 010 26 Žilina,www.uniza.sk/index.php/ru/,8 000,,,,2000-5000,150-2000,6,,5,,
+4,Прешовский университет в Прешове,Prešovská univerzita v Prešove,ПУ,PU,,1997,"ул. 17 ноября, № 15 080 01 Прешов",Ul. 17. novembra č.15 080 01 Prešov,www.unipo.sk/vzdelavanie/zah,12 000,,,,2000-5000,150-1500,7,,4,,
+10,Тренчинский университет Александра Дубчека,Trenčianska univerzita Alexandra Dubčeka v Trenčíne,ТУАД,TUAD,,1997,"Студенческая 1639/2, 911 01 Тренчин","Študentská 1639/2, 911 01 Trenčín",tnuni.sk/aktuality/,5000,,,,2000-5000,150-1500,8,,7,,
+12,Университет Коменского в Братиславе,Univerzita Komenského v Bratislave,УК,UK,,1919,Шафариково наместие 6 Почтовый ящик 440 814 99 Братислава 1,Šafárikovo námestie 6 P.O.BOX 440 814 99 Bratislava 1,www.uniba.sk/,26 000,,,,2000-5000,100-1500,9,,2,,
+11,Трнавский университет в Трнаве,Trnavská univerzita v Trnave,ТУ,TU,,1992,Горнопоточна 23 918 43 Трнава,Hornopotočná 23 918 43 Trnava,www.truni.sk/,12 000,,,,2000-5000,150-1600,10,,8,,
+17,Университет ветеринарной медицины и фармации в Кошице,Univerzita veterinárskeho lekárstva a farmácie v Košiciach,УВМФ,UVLF,,1949,"Коменского 73, 041 810, Кошице","Komenského 73, 041 810, Košice",www.uvlf.sk/,2000,,,,2000-5000,150-1700,11,,1,,
+1,Академия искусств в Банской Быстрице,Akadémia umení v Banskej Bystrici,АИ,AU,,1997,"Й. Коллара 22, 974 01, Банска Быстрица","J. Kollára 22, 974 01, Banská Bystrica",www.aku.sk,1000,,,,2000-5000,150-1600,12,,3,,
+18,Университет исполнительских искусств в Братиславе,Vysoká škola múzických umení v Bratislave,ВШМУ,VŠMU,,1949,"Вентурска 3, 813 01, Братислава","Ventúrska 3, 813 01, Bratislava",www.vsmu.sk,2000,,,,2000-5000,150-1400,13,,2,,
+9,Технический университет в Зволене,Technická univerzita vo Zvolene,ТУЗ,TUZ,,1952,"ул. Т. Г. Масарика 24, 960 01, Зволен","Ul. T. G. Masaryka 24, 960 01, Zvolen",www.tuzvo.sk/,5000,,,,2000-5000,100-1300,14,,9,,
+5,Сельскохозяйственный университет в Нитре,Slovenská poľnohospodárska univerzita v Nitre,СХУ,SPU,,1952,"тр. А. Глинку 2, 949 76 Нитра","Tr. A. Hlinku 2, 949 76 Nitra",www.uniag.sk/sk/,6000,,,,2000-5000,150-1700,15,,6,,
+7,Словацкий медицинский университет в Братиславе,Slovenská zdravotnícka univerzita v Bratislave,СЗУ,SZU,,2002,"831 01 Братислава, Словакия","831 01 Bratislava, Slovakia",www.szu.sk,4000,,,,2000-5000,100-1000,16,,2,,
+16,Университет св. Кирилла и Мефодия в Трнаве,Univerzita sv. Cyrila a Metoda v Trnave,УКМ,UCM,,1997,"Площадь Йозева Герда 577/2, 917 01 Трнава","Námestie Jozefa Herdu 577/2, 917 01 Trnava",www.ucm.sk,6000,,,,2000-5000,100-1500,17,,8,,
+13,Университет Константина Философа в Нитре,Univerzita Konštantína Filozofa v Nitre,УКФ,UKF,,1959,"тр. А. Глинку 1, 949 74, Нитра","Tr. A. Hlinku 1, 949 74, Nitra",www.uniag.sk/sk/,8000,,,,2000-5000,150-1700,18,,6,,
+19,Университет изящных искусств в Братиславе,Vysoká škola výtvarných umení v Bratislave,ВШВУ,VSVU,,1949,Гвездославово нам. 18 814 37 Братислава,Hviezdoslavovo nám. 18 814 37 Bratislava,www.vsvu.sk/sk/,2000,,,,2000-5000,150-1600,19,,2,,
+3,Католический университет в Ружомбероке,Katolícka univerzita v Ružomberku,КУ,KU,,2000,"60, Námestie Andreja Hlinka 1159, 034 01 Ружомберок","60, Námestie Andreja Hlinku 1159, 034 01 Ružomberok",www.ku.sk,4000,,,,2000-5000,150-2000,20,,10,,

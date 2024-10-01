@@ -1,0 +1,69 @@
+@import "../base/variables";
+
+.viibes{
+  &__faq{
+    padding: 14rem 0;
+    .viibes__wrap{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+    &_left{
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      .viibes__contacts_row_socials{
+        margin-top: 4.5rem;
+      }
+    }
+    &_content{
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+  .viibes{
+    &__faq{
+      .viibes__wrap{
+        grid-template-columns: 1fr;
+      }
+      &_left{
+        .viibes__contacts_row_socials{
+          margin-top: 0.625rem;
+        }
+      }
+      &_content{
+        &_item{
+          & p{
+            max-width: calc(100% - 4rem);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 0) and (max-width: 767px){
+  .viibes{
+    &__faq{
+        padding: 11rem 0;
+      .viibes__wrap{
+        grid-template-columns: 1fr;
+          gap: 5rem;
+      }
+      &_left{
+          gap: 1.25rem;
+        .viibes__contacts_row_socials{
+          margin-top: 1.75rem;
+        }
+      }
+    }
+  }
+    .viibes__drop_header{
+        align-items: center;
+    }
+}

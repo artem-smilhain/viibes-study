@@ -1,0 +1,72 @@
+import pandas as pd
+import numpy as np
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+import datetime as dt
+
+%matplotlib inline
+sns.set()
+
+
+df1 = pd.read_csv("csv/bratislava.csv")
+df2 = pd.read_csv("csv/kosice.csv")
+df3 = pd.read_csv("csv/nitra.csv")
+df4 = pd.read_csv("csv/ostrava.csv")
+df5 = pd.read_csv("csv/brno.csv")
+
+df4['produkt'] = df4['produkt'].replace(['Chleb', 'Mleko', 'Triko', 'Svetr'], ['Chlieb', 'Mlieko', 'Tricko', 'Sveter'])
+df5['produkt'] = df5['produkt'].replace(['Chleb', 'Mleko', 'Triko', 'Svetr'], ['Chlieb', 'Mlieko', 'Tricko', 'Sveter'])
+
+df4['cena'] = df4['cena'].div(24).round(1)
+df5['cena'] = df5['cena'].div(24).round(1)
+
+def f(row):
+    if row['produkt'] == 'Mlieko':
+        val = 'Potraviny'
+    elif row['produkt'] == 'Chlieb':
+        val = 'Potraviny'
+    elif row['produkt'] == 'Tricko':
+        val = 'Obleсenie'
+    elif row['produkt'] == 'Sveter':
+        val = 'Oblecenie'
+    elif row['produkt'] == 'Mobil':
+        val = 'Technika'
+    elif row['produkt'] == 'Laptop':
+        val = 'Technika'
+    elif row['produkt'] == 'Tablet':
+        val = 'Technika'
+    else:
+        val = 'Produkt'
+    return val
+
+
+df1['Kategoria produktu'] = df1.apply(f, axis = 1)
+df2['Kategoria produktu'] = df2.apply(f, axis = 1)
+df3['Kategoria produktu'] = df3.apply(f, axis = 1)
+df4['Kategoria produktu'] = df4.apply(f, axis = 1)
+df5['Kategoria produktu'] = df5.apply(f, axis = 1)
+
+
+df1.drop('Unnamed: 0', inplace = True, axis = 1)
+df2.drop('Unnamed: 0', inplace = True, axis = 1)
+df3.drop('Unnamed: 0', inplace = True, axis = 1)
+df4.drop('Unnamed: 0', inplace = True, axis = 1)
+df5.drop('Unnamed: 0', inplace = True, axis = 1)
+
+
+df1['kvartal'] = df1['cas_nakupu'].dt.quarter
+df2['kvartal'] = df2['cas_nakupu'].dt.quarter
+df3['kvartal'] = df3['cas_nakupu'].dt.quarter
+df4['kvartal'] = df4['cas_nakupu'].dt.quarter
+df5['kvartal'] = df5['cas_nakupu'].dt.quarter
+
+brdf = pd.concat([df1, df2, df3], keys = ['Bratislava', 'Kosice', 'Nitra'])
+bndf = pd.concat([df4, df5], keys = ['Ostrava', 'Brno'])
+
+skdf = pd.concat([brdf], keys = ['Slovensko'])
+czdf = pd.concat([bndf], keys = ['Ceska republika'])
+
+predaj = pd.concat([skdf, czdf])
+
+print(predaj)

@@ -1,0 +1,479 @@
+@import "../base/variables";
+.viibes{
+  &__cards{
+    padding: 14rem 0;
+      overflow: hidden;
+    & img{
+      object-fit: cover;
+    }
+    & .viibes__h2{
+      width: 85%;
+    }
+      & .viibes__h2_sub{
+          margin-top: 1rem;
+      }
+    &_main{
+      margin-top: 5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 3rem;
+
+    }
+    &_column{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 3rem;
+    }
+    &_item{
+      padding: 3rem 3rem;
+      background-color: $bg_gray;
+      border-radius: 3rem;
+      overflow: hidden;
+        isolation: isolate;
+      height: fit-content;
+      & p{
+        margin-top: 2rem;
+        padding-bottom: .75rem;
+      }
+      &_bottom_image{
+        width: calc(100% + 3rem);
+        margin-bottom: -3.2rem;
+        margin-right: -3rem;
+        margin-top: 5rem;
+        &_radius{
+          margin-top: 4rem;
+          width: 100%;
+          margin-right: 0;
+          margin-left: 0;
+          border-radius: 3rem 3rem 0 0;
+          max-height: 27.5rem;
+          margin-bottom: -3.2rem;
+        }
+      }
+      &_icon{
+        margin-top: 2rem;
+        margin-bottom: 4rem;
+        width: 8rem;
+      }
+      &_learn{
+        display: flex;
+        gap: 4rem;
+        width: calc(100% + 3rem);
+        margin-bottom: -3rem;
+        margin-top: 4rem;
+        & img{
+          width: 100%;
+          border-radius: 3rem 0 0 0;
+          margin-top: 3rem;
+          height: 36.75rem;
+        }
+        &_list{
+          display: flex;
+          flex-direction: column;
+          gap: 3rem;
+          &_item{
+            display: flex;
+            flex-direction: column;
+
+            & p{
+              padding: 0;
+              margin: 0;
+            }
+            & p:nth-of-type(1){
+              font-weight: 600;
+              font-size: 6rem;
+              line-height: 100%;
+              color: $text_purple;
+            }
+            & p:nth-of-type(2){
+              font-weight: 400;
+              font-size: 2.25rem;
+              line-height: 144%;
+              color: $text_gray;
+            }
+          }
+        }
+      }
+      &_top_image{
+        width: calc(100% + 3rem + 3rem);
+        margin-left: -3rem;
+        margin-top: -3rem;
+        max-height: 23.75rem;
+        margin-bottom: 4rem;
+      }
+      &_horizontal{
+        margin-top: 2rem;
+        display: flex;
+        gap: 2rem;
+        width: calc(100% + 3rem);
+        margin-bottom: -3rem;
+        & span{
+          padding-bottom: 2rem;
+          height: fit-content;
+        }
+        & img{
+          max-width: 19.75rem;
+          margin-top: 1rem;
+          height: fit-content;
+          align-self: flex-end;
+        }
+      }
+      &_check{
+        &_list{
+          gap: 2rem;
+          display: flex;
+          flex-direction: column;
+          margin-top: 2rem;
+        }
+        &_item{
+          display: flex;
+          gap: 1rem;
+          align-items: center;
+          & p{
+            font-weight: 400;
+            font-size: 2.25rem;
+            line-height: 152%;
+            color: $text_gray;
+            padding: 0;
+            margin: 0;
+          }
+          & img{
+            width: 3rem;
+            height: 3rem;
+          }
+        }
+      }
+      &_circles{
+        align-items: flex-end;
+        display: flex;
+        width: calc(100% + 3rem);
+        gap: 1.5rem;
+        margin-bottom: -3rem;
+        & p{
+          width: 100%;
+          padding-bottom: 2rem;
+          height: fit-content;
+        }
+        & img{
+          width: 20.25rem;
+          height: 24rem;
+        }
+      }
+      &_country{
+        position: relative;
+        height: 20.5rem;
+        width: 100%;
+        margin-bottom: 6rem;
+        &_list {
+          margin-top: 2rem;
+          position: absolute;
+          display: flex;
+          flex-shrink: 0;
+          gap: 2rem;
+          justify-content: center;
+          width: 100%;
+          &_item {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            &_image {
+              height: 17rem;
+              width: 16.25rem;
+              border-radius: 2.5rem;
+            }
+
+            &_name {
+              display: flex;
+              gap: .5rem;
+              align-items: center;
+              justify-content: center;
+
+              & span {
+                font-weight: 400;
+                font-size: 2rem;
+                line-height: 125%;
+                color: $text_gray;
+              }
+
+              & img {
+                width: 2.5rem;
+                height: 2.5rem;
+              }
+            }
+          }
+        }
+      }
+      &_twin_images{
+        padding-top: 1rem;
+        margin-bottom: 4rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        width: calc(100% + 3rem + 3rem);
+        margin-left: -3rem;
+        & img{
+          width: 100%;
+          height: 24.25rem;
+          object-fit: cover;
+          object-position: center;
+          &:nth-of-type(1){
+            border-radius: 0 3rem 3rem 0;
+          }
+          &:nth-of-type(2){
+            border-radius: 3rem 0 0 3rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+#cards_benefits, #cards_services{
+  .viibes__cards_main{
+    margin-bottom: 6.75rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+  #cards_benefits , #cards_services{
+    .viibes__cards_main{
+      margin-bottom: 0;
+    }
+  }
+  #cards_benefits, #cards_services{
+    .viibes__btn_link{
+      display: none;
+    }
+  }
+  .viibes {
+    &__cards {
+
+      & .viibes__h2 {
+        width: 100%;
+      }
+      &_main{
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        flex-wrap: wrap;
+        margin-bottom: 0;
+      }
+      &_column{
+        gap: 2rem;
+        width: calc((100% - 2rem) / 2);
+        &:nth-of-type(3){
+          flex-direction: row;
+          width: 100%;
+          .viibes__cards_item{
+            width: calc((100% - 2rem) / 2);
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 0) and (max-width: 767px){
+
+    .viibes__cards_services_background{
+        position: absolute;
+        width: 1000px !important;
+        height: 43%;
+        top: 7%;
+        left: -55%;
+        transform: rotate(8deg);
+        z-index: -1;
+    }
+
+  #cards_benefits, #cards_services{
+    .viibes__btn_link{
+      display: none;
+    }
+  }
+
+    #cards_courses_slider__pagination{
+        .swiper-pagination-bullet{
+            background: #e2ceed;
+        }
+    }
+
+   #cards_benefits_slider,
+   #cards_services_slider,
+   #cards_process_slider,
+   #cards_courses_slider,
+   {
+       width: 80vw;
+   }
+
+    #cards_courses{
+        background: $bg_gray;
+        .viibes__cards_item{
+            background: $bg_white !important;
+            &:first-child{
+                img{
+                    padding: 1.5rem;
+                    background: #F4F5F6;
+                    border-radius: 2rem 0 0 0;
+                }
+            }
+        }
+    }
+
+   #cards_services_slider{
+       .viibes__cards_item{
+           background: linear-gradient(214deg, #FFF 0%, #F4F5F6 100%) !important;
+       }
+   }
+
+  .viibes {
+    &__cards {
+      padding: 11rem 0;
+      & .viibes__h2 {
+        width: 100%;
+      }
+      &_main{
+        display: flex;
+        flex-direction: row;
+        gap: 0;
+        //flex-wrap: wrap;
+        margin-bottom: 0 !important;
+          margin-top: 4rem;
+      }
+        .cards-pagination{
+            position: relative !important;
+            width: 50vw !important;
+            display: flex !important;
+            margin: 0 calc(25vw - 2rem) !important;
+            justify-content: center !important;
+            bottom: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            top: 0 !important;
+            padding-top: 4rem !important;
+            gap: 1rem;
+            .swiper-pagination-bullet{
+                width: 16px !important;
+                height: 16px !important;
+                border-radius: 50%;
+                background: #F7EBFE;
+            }
+            .swiper-pagination-bullet-active{
+                background: #A264F1 !important;
+            }
+        }
+      &_item{
+          width: calc(80vw - 6rem) !important;
+          flex-shrink: 0;
+          & h3{
+              font-size: 2.25rem;
+              font-weight: 500;
+          }
+        & p{
+          padding: 0;
+          margin-top: 1rem;
+        }
+        &_bottom{
+          &_image{
+            &_radius{
+              max-height: 23.75rem;
+              margin-top: 3rem;
+                height: 22rem;
+            }
+          }
+        }
+        &_check{
+          &_item{
+            & p{
+              font-size: 1.8rem;
+              margin: 0;
+            }
+          }
+        }
+        &_circles{
+          margin-top: 1rem;
+
+          & p{
+            margin: 0;
+              padding-bottom: 3rem;
+              font-size: 1.6rem;
+          }
+          & img{
+            height: 18.75rem;
+              border-radius: 3rem 0 0 0;
+              padding: 1.5rem 0 0 1.5rem;
+              margin-right: -1.5rem;
+              background: #F4F5F6;
+          }
+        }
+        &_learn{
+            margin-top: 1.7rem;
+          gap: 3rem;
+          & img{
+            height: 28.625rem;
+            margin-top: 0;
+          }
+          &_list{
+            &_item{
+              & p{
+                margin: 0 !important;
+                &:nth-of-type(1){
+                  font-size: 4rem;
+                }
+                &:nth-of-type(2){
+                  font-size: 1.8rem;
+                }
+              }
+            }
+          }
+        }
+        &_country{
+          margin-bottom: 2rem;
+          &_list{
+            height: 18.5rem;
+            margin-top: 1rem;
+            &_item{
+              &_image{
+                  margin-top: 1rem;
+                width: 13rem;
+                height: 13rem;
+              }
+                &_name span{
+                    font-size: 1.8rem;
+                }
+            }
+          }
+        }
+        &_top{
+          &_image{
+            margin-bottom: 3rem;
+              width: calc(100% + 9rem + 3rem);
+          }
+        }
+        &_twin_images{
+          margin-bottom: 3rem;
+          & img{
+              height: 17.25rem;
+          }
+        }
+        &_icon{
+          width: 6rem;
+          margin-bottom: 3rem;
+          margin-top: 1rem;
+        }
+      }
+      &_column{
+        gap: 2rem;
+        width: 100%;
+      }
+      &_bottom_image{
+        margin-top: 2.625rem;
+      }
+    }
+  }
+    .viibes__cards_item_horizontal img{
+        margin-right: -6rem;
+        margin-bottom: -3rem;
+    }
+}
+

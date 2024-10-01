@@ -1,0 +1,48 @@
+@import "../base/variables";
+.viibes{
+  &__contacts{
+    &_list{
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+    &_row{
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      gap: 3rem;
+      row-gap: 2rem;
+      flex-wrap: wrap;
+      & a{
+        transition-duration: $transition_duration;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+
+
+      &_content{
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+      &_socials{
+        display: flex;
+        gap: 2rem;
+        flex-direction: row;
+      }
+    }
+  }
+}
+
+@media (min-width: 0px) and (max-width: 767px){
+  .viibes{
+    &__cta_contacts{
+      &_row{
+        flex-direction: column;
+        align-items: unset;
+      }
+    }
+  }
+}

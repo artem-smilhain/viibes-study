@@ -1,0 +1,397 @@
+@import "../base/variables";
+.viibes{
+  &__services{
+    .viibes__header{
+      & path{
+        fill: $text_purple;
+      }
+      &_list{
+        & a{
+          color: $text_gray;
+        }
+
+      }
+    }
+    &_preview{
+        padding: 25rem 0 4rem 0;
+      &_content{
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+        margin-top: 3rem;
+        &_main{
+          max-width: 99rem;
+          display: flex;
+          flex-direction: column;
+          gap: 4rem;
+          &_list{
+            display: flex;
+            gap: 3rem;
+          }
+          &_item{
+            display: flex;
+            flex-direction: column;
+            padding: 3rem;
+            border-radius: 3rem;
+            width: fit-content;
+            height: fit-content;
+
+          }
+        }
+        &_list{
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          width: fit-content;
+          max-width: 50.5rem;
+          &_item{
+            display: flex;
+            gap: 1rem;
+            //align-items: center;
+            & svg{
+              flex-shrink: 0;
+            }
+          }
+        }
+      }
+    }
+    &_packages{
+      padding: 14rem 0;
+      & .viibes__h2{
+        max-width: 80%;
+      }
+      & .viibes__h2_sub{
+        margin-top: 1rem;
+        max-width: 80%;
+        &:nth-of-type(2){
+          margin-top: 7rem;
+          max-width: 100rem;
+        }
+      }
+      &_list{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 3rem;
+        margin-top: 6.75rem;
+
+      }
+      &_item{
+          position: relative;
+        border-radius: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 7rem;
+          padding: 9rem 4rem 5rem 4rem;
+        align-items: center;
+        overflow: hidden;
+          isolation: isolate;
+        &:nth-of-type(2){
+          & .viibes__btn_medium{
+            &:hover{
+              background-color: $bg_purple!important;
+              color: $text_purple!important;
+            }
+          }
+          & .viibes__services_packages_item_list_item p{
+            color: $text_white;
+          }
+        }
+          &_sale{
+              width: 100%;
+              background: $bg_purple_cta;
+              font-weight: 700;
+              text-align: center;
+              padding: 1.75rem 0;
+              color: $text_white;
+              position: absolute;
+              top: 0;
+              left: 0;
+              font-size: 2rem;
+          }
+        &_topside{
+          //display: flex;
+          //flex-direction: column;
+          &_title{
+            display: flex;
+            justify-content: space-between;
+              div{
+                  display: flex;
+                  flex-direction: column;
+              }
+              .left{
+                text-align: left;
+                  gap: 1.5rem;
+              }
+              .right{
+                  gap: 0.5rem;
+                  text-align: right;
+                  justify-content: space-evenly;
+                  span{
+                      span{
+                          font-size: 18px;
+                      }
+                  }
+                  h5{
+                      font-size: 22px;
+                      font-weight: 600;
+                      line-height: 100%;
+                      text-decoration: line-through;
+                  }
+              }
+
+          }
+        }
+        &_underside{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          max-width: 32.75rem;
+          &_link{
+            font-weight: 400;
+            font-size: 2rem;
+            line-height: 152%;
+            text-align: center;
+            text-decoration-line: underline;
+            margin-top: 2rem;
+          }
+        }
+        &_mark{
+          padding: 1rem 3rem 1rem 4rem;
+          margin-left: -4rem;
+          margin-top: -1rem;
+          width: fit-content;
+          border-radius: 0 3rem 3rem 0;
+        }
+
+        &_list{
+          display: flex;
+          flex-direction: column;
+          gap: 3rem;
+          margin-top: 4rem;
+          & p{
+            color: #616E7E;
+          }
+
+          &_item{
+            display: flex;
+            gap: 1rem;
+            //align-items: center;
+            & svg{
+              flex-shrink: 0;
+            }
+
+          }
+        }
+      }
+        @media (min-width: 991px){
+            #viibes__services_package_standart{
+                //transform: scale(1.04);
+            }
+        }
+    }
+    &_extra{
+      padding: 14rem 0;
+      & .viibes__wrap{
+        display: flex;
+        gap: 7rem;
+        padding: 7rem;
+        border-radius: 3rem;
+        max-height: 94rem;
+      }
+      &_preview{
+        max-width: 63.75rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        & p{
+          margin-top: 1rem;
+        }
+        & a{
+          margin-top: 3rem;
+        }
+      }
+      &_image{
+        width: 100%;
+        max-height: 44rem;
+        border-radius: 3rem 3rem 0 0;
+        margin-bottom: -7rem;
+      }
+      &_list{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        overflow-y: scroll;
+        &::-webkit-scrollbar{
+          display: none;
+        }
+        &_item{
+          padding: 2.25rem 3rem;
+          border-radius: 3rem;
+            max-width: 72.5rem;
+          & p{
+            margin-top: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+  .viibes{
+    &__services {
+      &_preview{
+        &_content{
+          flex-direction: column;
+          gap: 4.5rem;
+          margin-top: 7rem;
+          &_list{
+            max-width: unset;
+            gap: 2rem;
+          }
+        }
+      }
+      &_packages{
+        & .viibes__h2, & .viibes__h2_sub{
+          max-width: unset;
+        }
+        &_list{
+          grid-template-columns: 1fr 1fr;
+          gap: 2rem;
+        }
+        &_item{
+          padding: 5rem 3rem;
+
+          &_mark{
+            margin-left: -3rem;
+          }
+        }
+
+      }
+      &_extra{
+        .viibes__wrap{
+          flex-direction: column;
+          height: unset;
+          gap: 5rem;
+        }
+        &_preview{
+          max-width: unset;
+        }
+        &_image{
+          display: none;
+        }
+        &_list{
+          max-height: 80rem;
+          overflow-y: scroll;
+          &::-webkit-scrollbar{
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 0) and (max-width: 767px){
+  .viibes{
+    &__services {
+      &_preview{
+        padding: 18rem 0 7rem 0;
+        &_content{
+          margin-top: 3rem;
+          flex-direction: column;
+          gap: 2rem;
+          &_main{
+            gap: 2rem;
+            &_list{
+              flex-wrap: wrap;
+              gap: 2rem;
+            }
+            &_item{
+              width: calc((100% - 2rem) / 2);
+              box-sizing: border-box;
+              &:nth-of-type(3){
+                width: 100%;
+              }
+            }
+          }
+          &_list{
+            max-width: unset;
+            gap: 2rem;
+          }
+        }
+      }
+      &_packages{
+        padding: 11rem 0;
+        & .viibes__h2, & .viibes__h2_sub{
+          max-width: unset;
+        }
+        &_list{
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+        &_item{
+            padding: 8rem 2rem 3rem 2rem;
+          gap: 4rem;
+          &_list{
+            gap: 2rem;
+            margin-top: 3rem;
+          }
+          &_mark{
+            margin-left: -3rem;
+            margin-top: 0;
+          }
+            &_topside_title{
+                .left{
+                    gap: 0.5rem;
+                }
+                .right{
+                    h5{
+                        font-size: 19px;
+                    }
+                }
+            }
+          &_underside{
+            max-width: 100%;
+              &_link{
+
+              }
+          }
+        }
+        & .viibes__btn_medium{
+          width: 100%;
+          text-align: center;
+        }
+      }
+      &_extra{
+        padding: 7rem 2rem;
+        .viibes__wrap{
+          padding: 3rem 2rem;
+          flex-direction: column;
+          height: unset;
+          gap: 5rem;
+        }
+        &_preview{
+          max-width: unset;
+        }
+        &_image{
+          display: none;
+        }
+        &_list{
+          max-height: 80rem;
+          overflow-y: scroll;
+          &::-webkit-scrollbar{
+            display: none;
+          }
+          &_item{
+            padding: 2rem;
+            & p{
+              margin-top: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

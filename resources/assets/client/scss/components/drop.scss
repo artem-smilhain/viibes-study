@@ -1,0 +1,52 @@
+@import "../base/variables";
+.viibes__drop_hidden{
+  display: none;
+}
+.viibes{
+  &__drop{
+    padding: 2.25rem 3rem;
+    border-radius: 3rem;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    & h4{
+      cursor: pointer;
+      transition-duration: $transition_duration;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+    &_img{
+      cursor: pointer;
+      transform: rotate(180deg);
+      transition-duration: $transition_duration;
+      &:hover{
+        filter: brightness(1.2);
+      }
+    }
+    &_active{
+      & .viibes__drop_img{
+        transform: rotate(0deg);
+      }
+      & .viibes__drop_hidden{
+        display: block;
+      }
+    }
+    &_header{
+      display: flex;
+      gap: 3rem;
+      justify-content: space-between;
+    }
+  }
+}
+@media (min-width: 0) and (max-width: 767px){
+  .viibes{
+    &__drop{
+      padding: 2rem;
+      &_img{
+        width: 3rem;
+        height: 3rem;
+      }
+    }
+  }
+}
